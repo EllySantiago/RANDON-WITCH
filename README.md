@@ -265,13 +265,6 @@ vies_alto  = palpites_acima  / total_tentativas
 
 ---
 
-## Extensoes Sugeridas (Opcionais)
 
--   Gerar 100+ sessoes para testar o modulo analitico
--   Comparar desempenho humano com busca binaria simulada
--   Adicionar modo treino com sugestao do proximo palpite
--   Implementar GUI com raylib, NCurses ou ImTui
-
----
 
 _Projeto desenvolvido para a disciplina de Programacao Imperativa e Funcional — PIF 2026.1_
