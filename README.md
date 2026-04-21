@@ -2,10 +2,10 @@
 
 alunos: Drielly Santiago dos Santos
 
-links uteis:
-docs com diagramas e historias de usuario:
-https://docs.google.com/document/d/1Onn0zreH8-ji0cUPtdZGIiET4_C9ct-UDlEsmH9ZOP0/edit?usp=sharing
-click up/ trello
+- links uteis:
+- docs com diagramas e historias de usuario:
+-  https://docs.google.com/document/d/1Onn0zreH8-ji0cUPtdZGIiET4_C9ct-UDlEsmH9ZOP0/edit?usp=sharing
+- click up/ trello:
 
 
 
