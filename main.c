@@ -129,10 +129,10 @@ int carregar_historico(Sessao sessoes[], int max) {
     return total;
 }
 
-// recursao pra calcular a media
-double media_recursiva(Sessao sessoes[], int n) {
+// recursao pra calcular a soma
+int soma_recursiva(Sessao sessoes[], int n) {
     if (n == 1) return sessoes[0].total_tentativas;
-    return (media_recursiva(sessoes, n - 1) * (n - 1) + sessoes[n - 1].total_tentativas) / n;
+    return soma_recursiva(sessoes, n - 1) + sessoes[n - 1].total_tentativas;
 }
 
 // recursao pra achar o minimo
@@ -155,6 +155,30 @@ double soma_quad(Sessao sessoes[], int n, double media) {
     return soma_quad(sessoes, n - 1, media) + pow(sessoes[n - 1].total_tentativas - media, 2);
 }
 
+// mostra o relatorio de uma sessao individual
+void exibir_sessao(Sessao *s, int numero) {
+    printf("\n--- Partida #%d ---\n", numero);
+    printf("Data: %s\n", s->timestamp);
+    printf("Jogador: %s\n", s->nome);
+    printf("Numero alvo: %d\n", s->numero_alvo);
+    printf("Tentativas: %d\n", s->total_tentativas);
+    printf("Palpites abaixo: %d | acima: %d\n", s->palpites_baixo, s->palpites_alto);
+    printf("Sequencia: ");
+    for (int i = 0; i < s->total_tentativas; i++) {
+        printf("%d", s->sequencia[i]);
+        if (i < s->total_tentativas - 1) printf(" -> ");
+    }
+    printf("\n");
+
+    // avaliacao por sessao
+    if (s->total_tentativas <= 7)
+        printf("Avaliacao: excelente desempenho!\n");
+    else if (s->total_tentativas <= 12)
+        printf("Avaliacao: desempenho mediano.\n");
+    else
+        printf("Avaliacao: pode melhorar a estrategia.\n");
+}
+
 void analisar_historico() {
     printf("\033[2J\033[H");
     Sessao sessoes[MAX_SESSOES];
@@ -167,29 +191,64 @@ void analisar_historico() {
         return;
     }
 
-    double media = media_recursiva(sessoes, total);
-    int melhor   = minimo_recursivo(sessoes, total);
-    int pior     = maximo_recursivo(sessoes, total);
-    double desvio = sqrt(soma_quad(sessoes, total, media) / total);
+    // pergunta se quer filtrar por jogador
+    printf("\n1 - Ver todas as partidas\n");
+    printf("2 - Filtrar por jogador\n");
+    int op = ler_inteiro("Opcao: ", 1, 2);
+
+    char filtro[50] = "";
+    if (op == 2) {
+        printf("Nome do jogador: ");
+        scanf("%49s", filtro);
+        limpar_buffer();
+    }
+
+    // monta o array filtrado
+    Sessao filtradas[MAX_SESSOES];
+    int qtd = 0;
+    for (int i = 0; i < total; i++) {
+        if (op == 1 || strcmp(sessoes[i].nome, filtro) == 0) {
+            filtradas[qtd++] = sessoes[i];
+        }
+    }
+
+    if (qtd == 0) {
+        printf("\nNenhuma partida encontrada para '%s'.\n", filtro);
+        return;
+    }
+
+    // relatorio individual de cada partida
+    printf("\n=== RELATORIO POR PARTIDA ===\n");
+    for (int i = 0; i < qtd; i++)
+        exibir_sessao(&filtradas[i], i + 1);
+
+    // estatisticas agregadas usando recursao
+    int soma_total = soma_recursiva(filtradas, qtd);
+    double media   = (double)soma_total / qtd;
+    int melhor     = minimo_recursivo(filtradas, qtd);
+    int pior       = maximo_recursivo(filtradas, qtd);
+    double desvio  = sqrt(soma_quad(filtradas, qtd, media) / qtd);
 
     // calcula o vies do jogador
     double total_baixo = 0, total_alto = 0;
-    for (int i = 0; i < total; i++) {
-        total_baixo += sessoes[i].palpites_baixo;
-        total_alto  += sessoes[i].palpites_alto;
+    for (int i = 0; i < qtd; i++) {
+        total_baixo += filtradas[i].palpites_baixo;
+        total_alto  += filtradas[i].palpites_alto;
     }
     double tp = total_baixo + total_alto;
     double taxa_baixo = tp > 0 ? (total_baixo / tp) * 100.0 : 0;
     double taxa_alto  = tp > 0 ? (total_alto  / tp) * 100.0 : 0;
 
-    printf("Total de sessoes    : %d\n", total);
+    printf("\n=== ESTATISTICAS AGREGADAS ===\n");
+    printf("Total de sessoes    : %d\n", qtd);
+    printf("Soma de tentativas  : %d\n", soma_total);
     printf("Media de tentativas : %.2f\n", media);
     printf("Melhor sessao       : %d tentativas\n", melhor);
     printf("Pior sessao         : %d tentativas\n", pior);
     printf("Desvio padrao       : %.2f\n", desvio);
     printf("Vies baixo / alto   : %.1f%% / %.1f%%\n", taxa_baixo, taxa_alto);
 
-    printf("\n--- Sugestoes ---\n");
+    printf("\n--- Sugestoes de Estrategia ---\n");
     if (media > 10)
         printf("Voce usa muitas tentativas. Tente comecar sempre pelo meio (50).\n");
     else if (media <= 7)
@@ -281,6 +340,19 @@ void mostrar_ranking() {
     fclose(f);
 }
 
+// mensagem motivacional baseada no desempenho da partida
+void mensagem_motivacional(int tentativas) {
+    printf("\n--- Resumo da partida ---\n");
+    if (tentativas <= 5)
+        printf("Sensacional! Voce e um mestre da busca binaria!\n");
+    else if (tentativas <= 8)
+        printf("Muito bem! Estrategia afiada, continue assim.\n");
+    else if (tentativas <= 12)
+        printf("Bom jogo! Com mais pratica voce vai melhorar ainda mais.\n");
+    else
+        printf("Nao desista! Tente comecar sempre pelo meio (50) e ir dividindo o intervalo.\n");
+}
+
 void jogar() {
     printf("\033[2J\033[H");
     char nome[50];
@@ -326,6 +398,7 @@ void jogar() {
 
     salvar_historico(&s);
     atualizar_ranking(nome, tentativas);
+    mensagem_motivacional(tentativas);
     printf("Progresso salvo!\n");
 }
 
