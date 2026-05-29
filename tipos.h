@@ -5,6 +5,12 @@
 #define MAX_PALPITES 100
 #define MAX_SESSOES 200
 
+typedef enum {
+    FACIL  = 1,
+    MEDIO  = 2,
+    DIFICIL = 3
+} Dificuldade;
+
 // estrutura do jogador pro ranking
 typedef struct {
     char nome[50];

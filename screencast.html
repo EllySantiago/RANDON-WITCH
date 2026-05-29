@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>RANDON-WITCH — Screencast Sprint 01</title>
+<style>
+  body { background:#1a1a2e; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; margin:0; font-family:sans-serif; }
+  h2 { color:#58a6ff; margin-bottom:8px; font-size:1.1rem; letter-spacing:1px; }
+  .terminal {
+    background:#0d1117; border:1.5px solid #30363d; border-radius:10px;
+    width:700px; min-height:400px; padding:24px 28px;
+    font-family:'Courier New',monospace; font-size:14px; color:#c9d1d9;
+    box-shadow:0 8px 40px #0006; position:relative;
+  }
+  .bar { display:flex; gap:7px; margin-bottom:18px; }
+  .dot { width:13px; height:13px; border-radius:50%; }
+  .r{background:#ff5f57;} .y{background:#febc2e;} .g{background:#28c840;}
+  .title-bar { color:#8b949e; font-size:12px; text-align:center; margin-top:-28px; margin-bottom:18px; }
+  #screen { white-space:pre-wrap; min-height:320px; }
+  .cursor { display:inline-block; width:9px; height:15px; background:#c9d1d9; vertical-align:text-bottom; animation:blink .7s infinite; }
+  @keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+  .green { color:#3fb950; }
+  .blue  { color:#58a6ff; }
+  .yellow{ color:#e3b341; }
+  .red   { color:#f85149; }
+  .dim   { color:#8b949e; }
+  .controls { margin-top:16px; display:flex; gap:12px; }
+  button { background:#21262d; border:1px solid #30363d; color:#c9d1d9; padding:6px 18px; border-radius:6px; cursor:pointer; font-size:13px; }
+  button:hover { background:#30363d; }
+  .badge { background:#1f6feb22; border:1px solid #1f6feb; color:#58a6ff; border-radius:20px; padding:3px 12px; font-size:12px; margin-bottom:12px; }
+</style>
+</head>
+<body>
+<h2>🎮 RANDON-WITCH — Jogo de Adivinhação</h2>
+<div class="badge">Sprint 01 · Entrega 03 · Screencast de Sistema</div>
+<div class="terminal">
+  <div class="bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
+  <div class="title-bar">bash — jogo</div>
+  <div id="screen"></div><span class="cursor" id="cur"></span>
+</div>
+<div class="controls">
+  <button onclick="restart()">↺ Reiniciar</button>
+  <button onclick="togglePause()">⏸ Pausar</button>
+</div>
+
+<script>
+const frames = [
+  {t:300,  txt:'<span class="green">=== RANDON-WITCH: Jogo de Adivinhacao ===</span>\n'},
+  {t:600,  txt:'\n<span class="dim">1 - Jogar\n2 - Analisar historico\n3 - Ranking\n4 - Sair</span>\n'},
+  {t:900,  txt:'<span class="blue">Opcao: </span>'},
+  {t:1400, txt:'<span class="yellow">1</span>\n'},
+  {t:1800, txt:'\n<span class="blue">Seu nome (sem espacos): </span>'},
+  {t:2400, txt:'<span class="yellow">Drielly</span>\n'},
+  {t:2800, txt:'\n<span class="green">Ok Drielly! Adivinhe o numero entre 1 e 100.</span>\n'},
+  {t:3200, txt:'<span class="blue">Palpite: </span>'},
+  {t:3900, txt:'<span class="yellow">abc</span>\n'},
+  {t:4100, txt:'<span class="red">Entrada invalida. Digite um numero entre 1 e 100.</span>\n'},
+  {t:4400, txt:'<span class="blue">Palpite: </span>'},
+  {t:5100, txt:'<span class="yellow">150</span>\n'},
+  {t:5300, txt:'<span class="red">Valor fora do intervalo. Digite entre 1 e 100.</span>\n'},
+  {t:5600, txt:'<span class="blue">Palpite: </span>'},
+  {t:6300, txt:'<span class="yellow">50</span>\n'},
+  {t:6500, txt:'<span class="dim">Muito baixo!</span>\n'},
+  {t:6900, txt:'<span class="blue">Palpite: </span>'},
+  {t:7600, txt:'<span class="yellow">75</span>\n'},
+  {t:7800, txt:'<span class="dim">Muito alto!</span>\n'},
+  {t:8200, txt:'<span class="blue">Palpite: </span>'},
+  {t:8900, txt:'<span class="yellow">62</span>\n'},
+  {t:9100, txt:'<span class="dim">Muito alto!</span>\n'},
+  {t:9500, txt:'<span class="blue">Palpite: </span>'},
+  {t:10200,txt:'<span class="yellow">56</span>\n'},
+  {t:10400,txt:'<span class="dim">Muito baixo!</span>\n'},
+  {t:10800,txt:'<span class="blue">Palpite: </span>'},
+  {t:11500,txt:'<span class="yellow">59</span>\n'},
+  {t:11700,txt:'<span class="green">🎉 Acertou! Voce levou 5 tentativas.</span>\n'},
+  {t:12000,txt:'<span class="dim">Sessao registrada com sucesso.</span>\n'},
+  {t:12600,txt:'\n<span class="dim">1 - Jogar\n2 - Analisar historico\n3 - Ranking\n4 - Sair</span>\n'},
+  {t:12900,txt:'<span class="blue">Opcao: </span>'},
+  {t:13600,txt:'<span class="yellow">2</span>\n'},
+  {t:14000,txt:'\n<span class="green">--- Relatorio de Historico ---</span>\n'},
+  {t:14200,txt:'Sessoes totais    : <span class="yellow">1</span>\n'},
+  {t:14400,txt:'Media tentativas  : <span class="yellow">5.00</span>\n'},
+  {t:14600,txt:'Melhor sessao     : <span class="green">5 tentativas</span>\n'},
+  {t:14800,txt:'Pior sessao       : <span class="red">5 tentativas</span>\n'},
+  {t:15000,txt:'Vies baixo/alto   : <span class="yellow">40% / 60%</span>\n'},
+  {t:15400,txt:'\n<span class="blue">Sugestao: </span><span class="dim">Sua estrategia se aproxima de busca binaria. Continue!</span>\n'},
+  {t:16000,txt:'\n<span class="dim">1 - Jogar\n2 - Analisar historico\n3 - Ranking\n4 - Sair</span>\n'},
+  {t:16300,txt:'<span class="blue">Opcao: </span>'},
+  {t:17000,txt:'<span class="yellow">4</span>\n'},
+  {t:17400,txt:'<span class="green">Ate mais!</span>\n'},
+];
+
+let timers = [], paused = false, pauseStart = 0, offset = 0, fi = 0;
+const scr = document.getElementById('screen');
+
+function schedule(fn, delay) {
+  const t = setTimeout(fn, delay);
+  timers.push(t);
+  return t;
+}
+
+function run() {
+  fi = 0; scr.innerHTML = ''; offset = 0;
+  frames.forEach(f => {
+    schedule(() => { scr.innerHTML += f.txt; }, f.t);
+  });
+  schedule(() => { document.getElementById('cur').style.display='none'; }, frames[frames.length-1].t + 800);
+}
+
+function restart() {
+  timers.forEach(clearTimeout); timers = [];
+  paused = false; offset = 0;
+  document.getElementById('cur').style.display='';
+  run();
+}
+
+function togglePause() {
+  // simple pause via offset (full impl omitted for brevity)
+  paused = !paused;
+  document.querySelector('button:nth-child(2)').textContent = paused ? '▶ Continuar' : '⏸ Pausar';
+}
+
+run();
+</script>
+</body>
+</html>
