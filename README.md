@@ -3,9 +3,10 @@
 Projeto Integrador da disciplina de Programacao Imperativa e Funcional (PIF)
 Curso de Analise e Desenvolvimento de Sistemas — 2026.1
 
-**Aluna:** Ana Beatriz Bezerra Lopes da Costa
-**Aluno:** Claudemir Pereira de Araujo Filho
-**Aluna:** Drielly Santiago dos Santos
+## Equipe
+- Ana Beatriz Bezerra Lopes da Costa
+- Claudemir Pereira de Araujo Filho
+- Drielly Santiago dos Santos
 
 ---
 
