@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 #include "ranking.h"
 
 void ordenar_ranking(Jogador lista[], int total) {
@@ -21,17 +22,22 @@ void ordenar_ranking(Jogador lista[], int total) {
     }
 }
 
-void atualizar_ranking(char *nome, int novas_tentativas) {
+void atualizar_ranking(char *nome, int novas_tentativas, const char *data) {
     Jogador lista[MAX_JOGADORES];
     int total = 0;
     int encontrado = 0;
 
     FILE *f = fopen("ranking.txt", "r");
     if (f != NULL) {
-        while (fscanf(f, "%49s %d %d", lista[total].nome, &lista[total].acertos, &lista[total].tentativas) == 3) {
+        while (fscanf(f, "%49s %d %d %29s",
+                      lista[total].nome,
+                      &lista[total].acertos,
+                      &lista[total].tentativas,
+                      lista[total].ultima_data) == 4) {
             if (strcmp(lista[total].nome, nome) == 0) {
                 lista[total].acertos += 1;
                 lista[total].tentativas += novas_tentativas;
+                strncpy(lista[total].ultima_data, data, 29);
                 encontrado = 1;
             }
             total++;
@@ -43,6 +49,7 @@ void atualizar_ranking(char *nome, int novas_tentativas) {
         strcpy(lista[total].nome, nome);
         lista[total].acertos = 1;
         lista[total].tentativas = novas_tentativas;
+        strncpy(lista[total].ultima_data, data, 29);
         total++;
     }
 
@@ -50,7 +57,9 @@ void atualizar_ranking(char *nome, int novas_tentativas) {
 
     f = fopen("ranking.txt", "w");
     for (int i = 0; i < total; i++)
-        fprintf(f, "%s %d %d\n", lista[i].nome, lista[i].acertos, lista[i].tentativas);
+        fprintf(f, "%s %d %d %s\n",
+                lista[i].nome, lista[i].acertos,
+                lista[i].tentativas, lista[i].ultima_data);
     fclose(f);
 }
 
@@ -66,12 +75,12 @@ void mostrar_ranking() {
         return;
     }
 
-    printf("%-4s %-15s %-8s %-10s\n", "Pos", "Jogador", "Acertos", "Tent. Totais");
-    printf("------------------------------------------\n");
+    printf("%-4s %-15s %-8s %-12s %-20s\n", "Pos", "Jogador", "Acertos", "Tent. Totais", "Ultimo Acerto");
+    printf("------------------------------------------------------------------\n");
 
     int pos = 1;
-    while (fscanf(f, "%49s %d %d", j.nome, &j.acertos, &j.tentativas) == 3) {
-        printf("%-4d %-15s %-8d %-10d\n", pos++, j.nome, j.acertos, j.tentativas);
+    while (fscanf(f, "%49s %d %d %29s", j.nome, &j.acertos, &j.tentativas, j.ultima_data) == 4) {
+        printf("%-4d %-15s %-8d %-12d %-20s\n", pos++, j.nome, j.acertos, j.tentativas, j.ultima_data);
     }
     fclose(f);
 }

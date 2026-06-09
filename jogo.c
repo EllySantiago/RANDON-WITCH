@@ -91,7 +91,7 @@ void jogar() {
 
     salvar_historico(&s);
     if (acertou) {
-        atualizar_ranking(nome, tentativas);
+        atualizar_ranking(nome, tentativas, s.timestamp);
         mensagem_motivacional(tentativas, ref_motivacional);
     }
     printf("Progresso salvo!\n");

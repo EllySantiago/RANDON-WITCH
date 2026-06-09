@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall
+CFLAGS = -Wall -std=c11
 LDFLAGS = -lm
 SRC = main.c jogo.c historico.c estatisticas.c ranking.c utils.c
 OUT = jogo

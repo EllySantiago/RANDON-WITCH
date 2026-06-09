@@ -16,6 +16,7 @@ typedef struct {
     char nome[50];
     int acertos;
     int tentativas;
+    char ultima_data[30]; // data do ultimo acerto
 } Jogador;
 
 // guarda os dados de uma partida
