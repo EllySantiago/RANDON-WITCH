@@ -72,7 +72,20 @@ void analisar_historico() {
 
     char filtro[50] = "";
     if (op == 2) {
-        printf("Nome do jogador: ");
+        // coleta jogadores unicos do historico
+        char jogadores[MAX_SESSOES][50];
+        int njog = 0;
+        for (int i = 0; i < total; i++) {
+            int ja_existe = 0;
+            for (int j = 0; j < njog; j++) {
+                if (strcmp(jogadores[j], sessoes[i].nome) == 0) { ja_existe = 1; break; }
+            }
+            if (!ja_existe) strncpy(jogadores[njog++], sessoes[i].nome, 49);
+        }
+        printf("\nJogadores no historico:\n");
+        for (int i = 0; i < njog; i++)
+            printf("  %d - %s\n", i + 1, jogadores[i]);
+        printf("\nNome do jogador: ");
         scanf("%49s", filtro);
         limpar_buffer();
     }
