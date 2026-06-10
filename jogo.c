@@ -7,6 +7,7 @@
 #include "historico.h"
 #include "ranking.h"
 #include "utils.h"
+#include "loja.h"
 
 static void mensagem_motivacional(int tentativas, int referencia) {
     printf("\n--- Resumo da partida ---\n");
@@ -93,6 +94,9 @@ void jogar() {
     if (acertou) {
         atualizar_ranking(nome, tentativas, s.timestamp);
         mensagem_motivacional(tentativas, ref_motivacional);
+        // moedas: max 20 na primeira tentativa, diminui 1 por tentativa, minimo 1
+        int moedas = tentativas <= 20 ? 21 - tentativas : 1;
+        adicionar_moedas(nome, moedas);
     }
     printf("Progresso salvo!\n");
 }
