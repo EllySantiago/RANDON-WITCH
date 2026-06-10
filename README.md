@@ -185,13 +185,13 @@ O screencast completo da execucao esta disponivel em [`screencast.html`](screenc
 
 ## Programacao em Par — Sprint 01
 
-Esta sprint foi desenvolvida em tres sessoes de pair programming:
+Essa sprint foi desenvolvida de de forma assíncrona, cada membro ficou responsavel por uma parte e depois de feita foi passada por revisao :
 
 | Par | Integrantes | Funcionalidades |
 |-----|-------------|-----------------|
-| Par 1 | Drielly Santiago + Ana Beatriz | H1 — Jogar nova partida: logica de sorteio, loop de palpites, dicas e registro da sessao em arquivo |
-| Par 2 | Drielly Santiago + Claudemir Araujo | H2 — Analisar historico: leitura com `fgets`, reconstrucao de sessoes via recursao, estatisticas agregadas e sugestoes de estrategia |
-| Par 3 | Ana Beatriz + Claudemir Araujo | H3 e H4 — Entrada invalida: validacao de intervalo, limpeza de buffer para entradas nao-numericas, EOF handling; Nivel de dificuldade: Facil/Medio/Dificil com intervalos e limite de tentativas no modo Dificil |
+| Tech Lead- design | Drielly Santiago | responsavel pelo figma, organizaçao  e revisao do projeto. lidou com a parte de documentaçao e distribuiu as tarefas a cada reuniao presencial e depois era checado e conferido via mensagens o andamento do projeto |
+| Programador |Claudemir Araujo | H2 — Analisar historico: leitura com `fgets`, reconstrucao de sessoes via recursao, estatisticas agregadas e sugestoes de estrategia |
+| QA e programadora | Ana Beatriz - ficou responsavel pela checagem de requisitos, prazos. entregou a implementaçao da loja de premios em C e os screecash da aplicaçao 
 
 A experiencia permitiu identificar em tempo real inconsistencias na validacao de entrada (issue #7) e no comportamento do ranking com multiplas sessoes (issue #6), ambos registrados no tracker.
 
