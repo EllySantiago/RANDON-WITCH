@@ -2,6 +2,7 @@
 #include <string.h>
 #include <time.h>
 #include "ranking.h"
+#include "loja.h"
 
 void ordenar_ranking(Jogador lista[], int total) {
     for (int i = 0; i < total - 1; i++) {
@@ -75,12 +76,13 @@ void mostrar_ranking() {
         return;
     }
 
-    printf("%-4s %-15s %-8s %-12s %-20s\n", "Pos", "Jogador", "Acertos", "Tent. Totais", "Ultimo Acerto");
-    printf("------------------------------------------------------------------\n");
+    printf("%-4s %-15s %-8s %-12s %-8s %-12s\n", "Pos", "Jogador", "Acertos", "Tent. Totais", "Moedas", "Ultimo Acerto");
+    printf("--------------------------------------------------------------------------\n");
 
     int pos = 1;
     while (fscanf(f, "%49s %d %d %29s", j.nome, &j.acertos, &j.tentativas, j.ultima_data) == 4) {
-        printf("%-4d %-15s %-8d %-12d %-20s\n", pos++, j.nome, j.acertos, j.tentativas, j.ultima_data);
+        int moedas = carregar_moedas(j.nome);
+        printf("%-4d %-15s %-8d %-12d %-8d %-12s\n", pos++, j.nome, j.acertos, j.tentativas, moedas, j.ultima_data);
     }
     fclose(f);
 }

@@ -1,945 +1,927 @@
 SESSAO
-timestamp=2026-05-01 11:00:00
-nome=Maria
-numero_alvo=13
-total_tentativas=7
-palpites_baixo=3
-palpites_alto=3
-sequencia=52,22,15,2,9,12,13
-FIM
-SESSAO
-timestamp=2026-05-01 13:00:00
-nome=Pedro
-numero_alvo=42
-total_tentativas=3
-palpites_baixo=1
-palpites_alto=1
-sequencia=54,23,42
-FIM
-SESSAO
-timestamp=2026-05-01 17:00:00
-nome=Drielly
+timestamp=2026-06-10 03:01:39
+nome=claudemir
 numero_alvo=28
-total_tentativas=9
-palpites_baixo=4
-palpites_alto=4
-sequencia=53,31,12,19,26,30,29,27,28
-FIM
-SESSAO
-timestamp=2026-05-01 23:00:00
-nome=Pedro
-numero_alvo=39
-total_tentativas=6
-palpites_baixo=2
-palpites_alto=3
-sequencia=45,21,38,44,40,39
-FIM
-SESSAO
-timestamp=2026-05-02 04:00:00
-nome=Joao
-numero_alvo=71
 total_tentativas=6
 palpites_baixo=3
 palpites_alto=2
-sequencia=47,69,88,73,70,71
+sequencia=50,30,20,25,27,28
 FIM
 SESSAO
-timestamp=2026-05-02 07:00:00
-nome=Drielly
-numero_alvo=42
-total_tentativas=9
-palpites_baixo=4
-palpites_alto=4
-sequencia=55,32,39,52,48,40,47,41,42
-FIM
-SESSAO
-timestamp=2026-05-02 12:00:00
-nome=Pedro
-numero_alvo=61
-total_tentativas=5
-palpites_baixo=1
-palpites_alto=3
-sequencia=55,79,67,63,61
-FIM
-SESSAO
-timestamp=2026-05-02 16:00:00
-nome=Lucas
-numero_alvo=11
-total_tentativas=5
-palpites_baixo=1
-palpites_alto=3
-sequencia=53,22,6,16,11
-FIM
-SESSAO
-timestamp=2026-05-02 19:00:00
-nome=AnaBeatriz
-numero_alvo=28
-total_tentativas=7
-palpites_baixo=3
-palpites_alto=3
-sequencia=47,25,39,29,26,27,28
-FIM
-SESSAO
-timestamp=2026-05-02 21:00:00
-nome=Fernanda
-numero_alvo=85
-total_tentativas=3
-palpites_baixo=2
-palpites_alto=0
-sequencia=48,76,85
-FIM
-SESSAO
-timestamp=2026-05-03 03:00:00
-nome=Lucas
-numero_alvo=72
-total_tentativas=6
-palpites_baixo=3
+timestamp=2026-06-10 03:01:57
+nome=claudemir
+numero_alvo=49
+total_tentativas=10
+palpites_baixo=7
 palpites_alto=2
-sequencia=52,76,60,70,75,72
+sequencia=100,50,20,30,35,40,45,47,48,49
 FIM
 SESSAO
-timestamp=2026-05-03 08:00:00
-nome=Joao
-numero_alvo=100
-total_tentativas=6
-palpites_baixo=5
-palpites_alto=0
-sequencia=51,81,87,98,99,100
-FIM
-SESSAO
-timestamp=2026-05-03 11:00:00
-nome=Pedro
-numero_alvo=73
-total_tentativas=6
-palpites_baixo=2
-palpites_alto=3
-sequencia=51,81,71,80,75,73
-FIM
-SESSAO
-timestamp=2026-05-03 13:00:00
-nome=Fernanda
-numero_alvo=94
-total_tentativas=6
-palpites_baixo=4
-palpites_alto=1
-sequencia=46,72,90,96,91,94
-FIM
-SESSAO
-timestamp=2026-05-03 18:00:00
-nome=Drielly
-numero_alvo=100
-total_tentativas=4
-palpites_baixo=3
-palpites_alto=0
-sequencia=49,79,95,100
-FIM
-SESSAO
-timestamp=2026-05-04 00:00:00
-nome=Joao
-numero_alvo=32
-total_tentativas=7
-palpites_baixo=4
-palpites_alto=2
-sequencia=50,21,38,26,30,31,32
-FIM
-SESSAO
-timestamp=2026-05-04 01:00:00
-nome=Claudemir
-numero_alvo=9
-total_tentativas=3
-palpites_baixo=0
-palpites_alto=2
-sequencia=48,21,9
-FIM
-SESSAO
-timestamp=2026-05-04 08:00:00
-nome=Claudemir
-numero_alvo=68
-total_tentativas=5
-palpites_baixo=2
-palpites_alto=2
-sequencia=51,73,64,72,68
-FIM
-SESSAO
-timestamp=2026-05-04 09:00:00
-nome=Maria
-numero_alvo=53
-total_tentativas=5
-palpites_baixo=2
-palpites_alto=2
-sequencia=45,74,57,52,53
-FIM
-SESSAO
-timestamp=2026-05-04 14:00:00
-nome=Maria
-numero_alvo=18
+timestamp=2026-06-10 03:03:05
+nome=claudemir
+numero_alvo=155
 total_tentativas=8
-palpites_baixo=3
-palpites_alto=4
-sequencia=47,21,11,20,15,16,19,18
-FIM
-SESSAO
-timestamp=2026-05-04 19:00:00
-nome=Pedro
-numero_alvo=30
-total_tentativas=5
-palpites_baixo=1
+palpites_baixo=4
 palpites_alto=3
-sequencia=50,27,37,31,30
+sequencia=50,150,18,180,170,160,150,155
 FIM
 SESSAO
-timestamp=2026-05-04 23:00:00
-nome=Lucas
-numero_alvo=68
-total_tentativas=7
-palpites_baixo=3
-palpites_alto=3
-sequencia=46,74,65,66,73,72,68
-FIM
-SESSAO
-timestamp=2026-05-05 01:00:00
-nome=Maria
-numero_alvo=73
-total_tentativas=5
-palpites_baixo=2
-palpites_alto=2
-sequencia=53,72,82,78,73
-FIM
-SESSAO
-timestamp=2026-05-05 08:00:00
-nome=Drielly
-numero_alvo=62
-total_tentativas=3
-palpites_baixo=1
-palpites_alto=1
-sequencia=54,76,62
-FIM
-SESSAO
-timestamp=2026-05-05 09:00:00
-nome=AnaBeatriz
-numero_alvo=19
-total_tentativas=7
-palpites_baixo=3
-palpites_alto=3
-sequencia=53,24,10,15,16,23,19
-FIM
-SESSAO
-timestamp=2026-05-05 16:00:00
-nome=Drielly
-numero_alvo=24
-total_tentativas=6
-palpites_baixo=1
-palpites_alto=4
-sequencia=51,23,39,34,26,24
-FIM
-SESSAO
-timestamp=2026-05-05 19:00:00
-nome=AnaBeatriz
-numero_alvo=35
-total_tentativas=9
-palpites_baixo=3
-palpites_alto=5
-sequencia=45,24,32,33,44,38,37,36,35
-FIM
-SESSAO
-timestamp=2026-05-05 21:00:00
-nome=Pedro
-numero_alvo=83
+timestamp=2026-06-10 03:05:46
+nome=claudemir
+numero_alvo=157
 total_tentativas=8
-palpites_baixo=3
-palpites_alto=4
-sequencia=51,71,81,87,86,85,84,83
-FIM
-SESSAO
-timestamp=2026-05-06 04:00:00
-nome=Joao
-numero_alvo=12
-total_tentativas=4
-palpites_baixo=1
-palpites_alto=2
-sequencia=46,22,8,12
-FIM
-SESSAO
-timestamp=2026-05-06 07:00:00
-nome=Maria
-numero_alvo=74
-total_tentativas=5
-palpites_baixo=3
-palpites_alto=1
-sequencia=48,76,58,69,74
-FIM
-SESSAO
-timestamp=2026-05-06 11:00:00
-nome=Pedro
-numero_alvo=24
-total_tentativas=7
-palpites_baixo=1
-palpites_alto=5
-sequencia=45,18,31,29,26,25,24
-FIM
-SESSAO
-timestamp=2026-05-06 15:00:00
-nome=Maria
-numero_alvo=9
-total_tentativas=5
-palpites_baixo=1
+palpites_baixo=4
 palpites_alto=3
-sequencia=50,30,13,8,9
+sequencia=50,100,150,180,170,160,155,157
 FIM
 SESSAO
-timestamp=2026-05-06 19:00:00
-nome=Pedro
-numero_alvo=16
-total_tentativas=9
-palpites_baixo=5
-palpites_alto=3
-sequencia=45,18,6,11,12,14,15,17,16
-FIM
-SESSAO
-timestamp=2026-05-06 21:00:00
-nome=Maria
+timestamp=2026-06-10 03:06:05
+nome=claudemir
 numero_alvo=1
-total_tentativas=6
+total_tentativas=7
 palpites_baixo=0
-palpites_alto=5
-sequencia=49,27,12,11,7,1
+palpites_alto=6
+sequencia=50,30,20,10,5,2,1
 FIM
 SESSAO
-timestamp=2026-05-07 02:00:00
-nome=Pedro
-numero_alvo=24
-total_tentativas=8
-palpites_baixo=4
-palpites_alto=3
-sequencia=50,27,12,20,22,23,25,24
-FIM
-SESSAO
-timestamp=2026-05-07 06:00:00
-nome=Joao
-numero_alvo=86
-total_tentativas=6
-palpites_baixo=3
+timestamp=2026-06-10 03:06:23
+nome=claudemir
+numero_alvo=197
+total_tentativas=10
+palpites_baixo=8
 palpites_alto=2
-sequencia=52,78,89,81,88,86
+sequencia=110,140,150,160,170,180,190,195,199,198
 FIM
 SESSAO
-timestamp=2026-05-07 09:00:00
-nome=Drielly
-numero_alvo=16
+timestamp=2026-06-10 03:06:37
+nome=claudemir
+numero_alvo=37
 total_tentativas=8
-palpites_baixo=4
-palpites_alto=3
-sequencia=46,19,10,18,13,14,15,16
+palpites_baixo=5
+palpites_alto=2
+sequencia=50,10,20,30,40,35,36,37
 FIM
 SESSAO
-timestamp=2026-05-07 13:00:00
-nome=Pedro
-numero_alvo=81
-total_tentativas=6
-palpites_baixo=2
-palpites_alto=3
-sequencia=45,78,91,84,82,81
-FIM
-SESSAO
-timestamp=2026-05-07 19:00:00
-nome=Joao
-numero_alvo=53
-total_tentativas=6
-palpites_baixo=2
-palpites_alto=3
-sequencia=51,71,62,54,52,53
-FIM
-SESSAO
-timestamp=2026-05-07 21:00:00
-nome=Lucas
-numero_alvo=8
-total_tentativas=6
-palpites_baixo=1
-palpites_alto=4
-sequencia=47,27,14,2,11,8
-FIM
-SESSAO
-timestamp=2026-05-08 02:00:00
-nome=Joao
-numero_alvo=10
+timestamp=2026-06-10 03:06:58
+nome=claudemir
+numero_alvo=132
 total_tentativas=7
 palpites_baixo=2
 palpites_alto=4
-sequencia=47,27,15,11,8,9,10
+sequencia=150,120,130,140,135,133,132
 FIM
 SESSAO
-timestamp=2026-05-08 05:00:00
-nome=Pedro
-numero_alvo=58
-total_tentativas=9
-palpites_baixo=2
-palpites_alto=6
-sequencia=55,77,66,64,62,60,59,57,58
-FIM
-SESSAO
-timestamp=2026-05-08 09:00:00
-nome=Maria
-numero_alvo=48
-total_tentativas=9
+timestamp=2026-06-10 03:07:17
+nome=claudemir
+numero_alvo=61
+total_tentativas=10
 palpites_baixo=3
-palpites_alto=5
-sequencia=45,71,56,54,53,46,52,47,48
+palpites_alto=6
+sequencia=150,100,70,50,55,60,65,63,62,61
 FIM
 SESSAO
-timestamp=2026-05-08 16:00:00
-nome=Joao
-numero_alvo=6
-total_tentativas=10
-palpites_baixo=2
-palpites_alto=7
-sequencia=52,29,13,4,10,5,9,8,7,6
+timestamp=2026-06-10 03:07:30
+nome=ana
+numero_alvo=67
+total_tentativas=7
+palpites_baixo=3
+palpites_alto=3
+sequencia=150,100,50,70,60,65,67
 FIM
 SESSAO
-timestamp=2026-05-08 18:00:00
-nome=Drielly
-numero_alvo=3
-total_tentativas=8
-palpites_baixo=2
-palpites_alto=5
-sequencia=54,23,16,5,1,2,4,3
+timestamp=2026-06-10 03:07:44
+nome=ana
+numero_alvo=108
+total_tentativas=6
+palpites_baixo=3
+palpites_alto=2
+sequencia=150,100,110,105,107,108
 FIM
 SESSAO
-timestamp=2026-05-08 23:00:00
-nome=Pedro
-numero_alvo=70
-total_tentativas=10
-palpites_baixo=5
-palpites_alto=4
-sequencia=53,75,65,66,68,69,74,72,71,70
-FIM
-SESSAO
-timestamp=2026-05-09 03:00:00
-nome=Fernanda
-numero_alvo=76
-total_tentativas=4
-palpites_baixo=2
-palpites_alto=1
-sequencia=47,74,86,76
-FIM
-SESSAO
-timestamp=2026-05-09 05:00:00
-nome=Lucas
-numero_alvo=4
-total_tentativas=5
-palpites_baixo=0
-palpites_alto=4
-sequencia=45,24,14,8,4
-FIM
-SESSAO
-timestamp=2026-05-09 09:00:00
-nome=Fernanda
-numero_alvo=13
-total_tentativas=10
-palpites_baixo=4
-palpites_alto=5
-sequencia=55,31,16,5,7,10,12,15,14,13
-FIM
-SESSAO
-timestamp=2026-05-09 14:00:00
-nome=Lucas
-numero_alvo=77
+timestamp=2026-06-10 03:07:56
+nome=ana
+numero_alvo=180
 total_tentativas=2
 palpites_baixo=1
 palpites_alto=0
-sequencia=46,77
+sequencia=150,180
 FIM
 SESSAO
-timestamp=2026-05-09 20:00:00
-nome=Drielly
-numero_alvo=94
-total_tentativas=7
-palpites_baixo=4
-palpites_alto=2
-sequencia=55,75,92,99,93,98,94
-FIM
-SESSAO
-timestamp=2026-05-09 21:00:00
-nome=Fernanda
-numero_alvo=23
-total_tentativas=8
-palpites_baixo=5
-palpites_alto=2
-sequencia=48,24,11,17,18,20,21,23
-FIM
-SESSAO
-timestamp=2026-05-10 04:00:00
-nome=Maria
-numero_alvo=47
-total_tentativas=8
-palpites_baixo=6
-palpites_alto=1
-sequencia=48,24,35,36,42,43,46,47
-FIM
-SESSAO
-timestamp=2026-05-10 07:00:00
-nome=Claudemir
-numero_alvo=10
-total_tentativas=3
-palpites_baixo=0
-palpites_alto=2
-sequencia=45,22,10
-FIM
-SESSAO
-timestamp=2026-05-10 09:00:00
-nome=AnaBeatriz
-numero_alvo=42
-total_tentativas=3
-palpites_baixo=1
-palpites_alto=1
-sequencia=55,23,42
-FIM
-SESSAO
-timestamp=2026-05-10 14:00:00
-nome=Lucas
-numero_alvo=81
-total_tentativas=6
-palpites_baixo=3
-palpites_alto=2
-sequencia=51,73,88,80,83,81
-FIM
-SESSAO
-timestamp=2026-05-10 19:00:00
-nome=Fernanda
-numero_alvo=38
-total_tentativas=8
-palpites_baixo=4
-palpites_alto=3
-sequencia=47,23,31,40,36,39,37,38
-FIM
-SESSAO
-timestamp=2026-05-11 00:00:00
-nome=Fernanda
-numero_alvo=22
-total_tentativas=6
-palpites_baixo=3
-palpites_alto=2
-sequencia=51,23,12,20,21,22
-FIM
-SESSAO
-timestamp=2026-05-11 01:00:00
-nome=Lucas
-numero_alvo=66
-total_tentativas=9
-palpites_baixo=4
-palpites_alto=4
-sequencia=53,80,69,57,68,64,67,65,66
-FIM
-SESSAO
-timestamp=2026-05-11 06:00:00
-nome=Maria
-numero_alvo=52
-total_tentativas=1
-palpites_baixo=0
-palpites_alto=0
-sequencia=52
-FIM
-SESSAO
-timestamp=2026-05-11 12:00:00
-nome=Lucas
-numero_alvo=82
-total_tentativas=6
-palpites_baixo=4
-palpites_alto=1
-sequencia=51,74,83,79,80,82
-FIM
-SESSAO
-timestamp=2026-05-11 13:00:00
-nome=Claudemir
-numero_alvo=78
-total_tentativas=7
-palpites_baixo=4
-palpites_alto=2
-sequencia=52,75,93,80,76,77,78
-FIM
-SESSAO
-timestamp=2026-05-11 19:00:00
-nome=Pedro
-numero_alvo=100
+timestamp=2026-06-10 03:08:06
+nome=drielly
+numero_alvo=3
 total_tentativas=5
-palpites_baixo=4
-palpites_alto=0
-sequencia=52,73,89,95,100
-FIM
-SESSAO
-timestamp=2026-05-11 21:00:00
-nome=Fernanda
-numero_alvo=63
-total_tentativas=4
-palpites_baixo=2
-palpites_alto=1
-sequencia=45,78,58,63
-FIM
-SESSAO
-timestamp=2026-05-12 02:00:00
-nome=Lucas
-numero_alvo=34
-total_tentativas=6
-palpites_baixo=2
+palpites_baixo=1
 palpites_alto=3
-sequencia=47,20,31,40,37,34
+sequencia=20,10,5,2,3
 FIM
 SESSAO
-timestamp=2026-05-12 08:00:00
-nome=Fernanda
-numero_alvo=11
+timestamp=2026-06-10 03:08:23
+nome=drielly
+numero_alvo=71
 total_tentativas=9
 palpites_baixo=2
 palpites_alto=6
-sequencia=48,29,18,6,17,13,12,10,11
+sequencia=50,80,70,76,75,74,73,72,71
 FIM
 SESSAO
-timestamp=2026-05-12 10:00:00
-nome=Claudemir
-numero_alvo=50
+timestamp=2026-06-10 03:08:44
+nome=marcelo
+numero_alvo=186
 total_tentativas=8
-palpites_baixo=5
-palpites_alto=2
-sequencia=52,23,35,39,48,49,51,50
+palpites_baixo=4
+palpites_alto=3
+sequencia=150,170,190,180,185,188,187,186
 FIM
 SESSAO
-timestamp=2026-05-12 13:00:00
-nome=Maria
-numero_alvo=59
+timestamp=2026-06-10 03:09:05
+nome=marcelo
+numero_alvo=186
 total_tentativas=5
 palpites_baixo=2
 palpites_alto=2
-sequencia=53,82,70,58,59
+sequencia=150,180,190,188,186
 FIM
 SESSAO
-timestamp=2026-05-12 17:00:00
-nome=Joao
-numero_alvo=66
+timestamp=2026-06-10 03:09:21
+nome=claudemir
+numero_alvo=88
+total_tentativas=10
+palpites_baixo=8
+palpites_alto=1
+sequencia=2,20,30,40,50,60,70,80,90,88
+FIM
+SESSAO
+timestamp=2026-06-10 03:09:37
+nome=claudemir
+numero_alvo=185
+total_tentativas=10
+palpites_baixo=10
+palpites_alto=0
+sequencia=30,60,80,100,110,120,130,140,150,160
+FIM
+SESSAO
+timestamp=2026-06-10 03:09:53
+nome=marcelo
+numero_alvo=78
+total_tentativas=8
+palpites_baixo=4
+palpites_alto=3
+sequencia=150,100,50,70,80,76,77,78
+FIM
+SESSAO
+timestamp=2026-06-10 03:10:06
+nome=claudemir
+numero_alvo=4
 total_tentativas=9
-palpites_baixo=3
-palpites_alto=5
-sequencia=45,76,55,65,71,70,69,68,66
+palpites_baixo=2
+palpites_alto=6
+sequencia=150,100,40,20,10,5,2,3,4
 FIM
 SESSAO
-timestamp=2026-05-13 00:00:00
-nome=Pedro
-numero_alvo=61
+timestamp=2026-06-10 03:10:19
+nome=claudemir
+numero_alvo=44
+total_tentativas=7
+palpites_baixo=1
+palpites_alto=5
+sequencia=150,100,40,60,50,45,44
+FIM
+SESSAO
+timestamp=2026-06-10 03:10:31
+nome=marcelo
+numero_alvo=75
+total_tentativas=6
+palpites_baixo=3
+palpites_alto=2
+sequencia=50,70,80,76,74,75
+FIM
+SESSAO
+timestamp=2026-06-10 03:10:44
+nome=larissa
+numero_alvo=43
+total_tentativas=9
+palpites_baixo=7
+palpites_alto=1
+sequencia=50,30,35,38,39,40,41,42,43
+FIM
+SESSAO
+timestamp=2026-06-10 03:10:55
+nome=ana
+numero_alvo=28
+total_tentativas=6
+palpites_baixo=4
+palpites_alto=1
+sequencia=20,30,25,26,27,28
+FIM
+SESSAO
+timestamp=2026-06-10 03:11:17
+nome=claudemir
+numero_alvo=83
+total_tentativas=10
+palpites_baixo=5
+palpites_alto=5
+sequencia=50,100,60,70,80,90,88,86,84,82
+FIM
+SESSAO
+timestamp=2026-06-10 03:11:36
+nome=larissa
+numero_alvo=28
+total_tentativas=9
+palpites_baixo=5
+palpites_alto=3
+sequencia=50,40,30,20,24,25,26,27,28
+FIM
+SESSAO
+timestamp=2026-06-10 03:11:51
+nome=claudemir
+numero_alvo=184
 total_tentativas=7
 palpites_baixo=3
 palpites_alto=3
-sequencia=45,77,58,63,60,62,61
+sequencia=150,160,180,190,188,186,184
 FIM
 SESSAO
-timestamp=2026-05-13 02:00:00
-nome=Maria
-numero_alvo=16
-total_tentativas=11
-palpites_baixo=5
-palpites_alto=5
-sequencia=45,23,8,10,12,19,18,17,13,14,16
-FIM
-SESSAO
-timestamp=2026-05-13 05:00:00
-nome=Fernanda
-numero_alvo=16
-total_tentativas=7
-palpites_baixo=1
-palpites_alto=5
-sequencia=55,30,11,25,19,18,16
-FIM
-SESSAO
-timestamp=2026-05-13 10:00:00
-nome=Claudemir
-numero_alvo=56
-total_tentativas=3
-palpites_baixo=1
-palpites_alto=1
-sequencia=48,69,56
-FIM
-SESSAO
-timestamp=2026-05-13 16:00:00
-nome=Drielly
-numero_alvo=71
-total_tentativas=4
-palpites_baixo=2
-palpites_alto=1
-sequencia=53,75,68,71
-FIM
-SESSAO
-timestamp=2026-05-13 17:00:00
-nome=AnaBeatriz
-numero_alvo=9
-total_tentativas=8
+timestamp=2026-06-10 03:12:16
+nome=claudemir
+numero_alvo=36
+total_tentativas=6
 palpites_baixo=3
-palpites_alto=4
-sequencia=48,21,5,17,12,6,8,9
+palpites_alto=2
+sequencia=20,30,40,35,37,36
 FIM
 SESSAO
-timestamp=2026-05-14 00:00:00
-nome=Drielly
-numero_alvo=58
+timestamp=2026-06-10 03:12:28
+nome=claudemir
+numero_alvo=18
+total_tentativas=7
+palpites_baixo=4
+palpites_alto=2
+sequencia=50,20,10,15,16,17,18
+FIM
+SESSAO
+timestamp=2026-06-10 03:12:47
+nome=claudemir
+numero_alvo=118
+total_tentativas=9
+palpites_baixo=5
+palpites_alto=3
+sequencia=100,150,130,120,110,115,17,18,118
+FIM
+SESSAO
+timestamp=2026-06-10 03:13:02
+nome=ana
+numero_alvo=39
+total_tentativas=6
+palpites_baixo=3
+palpites_alto=2
+sequencia=50,30,35,40,38,39
+FIM
+SESSAO
+timestamp=2026-06-10 03:13:22
+nome=larissa
+numero_alvo=10
+total_tentativas=4
+palpites_baixo=0
+palpites_alto=3
+sequencia=50,30,20,10
+FIM
+SESSAO
+timestamp=2026-06-10 03:13:40
+nome=claudemir
+numero_alvo=52
+total_tentativas=8
+palpites_baixo=1
+palpites_alto=6
+sequencia=100,90,70,60,50,55,53,52
+FIM
+SESSAO
+timestamp=2026-06-10 03:13:59
+nome=marcelo
+numero_alvo=103
+total_tentativas=4
+palpites_baixo=1
+palpites_alto=2
+sequencia=100,110,105,103
+FIM
+SESSAO
+timestamp=2026-06-10 03:14:19
+nome=ana
+numero_alvo=81
+total_tentativas=9
+palpites_baixo=2
+palpites_alto=6
+sequencia=100,70,80,90,87,85,83,82,81
+FIM
+SESSAO
+timestamp=2026-06-10 03:14:38
+nome=ana
+numero_alvo=187
+total_tentativas=10
+palpites_baixo=9
+palpites_alto=1
+sequencia=100,110,120,130,140,150,19,190,177,178
+FIM
+SESSAO
+timestamp=2026-06-10 03:14:57
+nome=ana
+numero_alvo=39
+total_tentativas=10
+palpites_baixo=8
+palpites_alto=1
+sequencia=2,10,20,30,40,35,36,37,38,39
+FIM
+SESSAO
+timestamp=2026-06-10 03:15:26
+nome=claudemir
+numero_alvo=29
+total_tentativas=8
+palpites_baixo=5
+palpites_alto=2
+sequencia=50,20,30,25,26,27,28,29
+FIM
+SESSAO
+timestamp=2026-06-10 03:15:43
+nome=joao
+numero_alvo=94
+total_tentativas=7
+palpites_baixo=5
+palpites_alto=1
+sequencia=50,60,70,80,90,96,94
+FIM
+SESSAO
+timestamp=2026-06-10 03:15:58
+nome=joao
+numero_alvo=4
+total_tentativas=5
+palpites_baixo=2
+palpites_alto=2
+sequencia=20,10,2,3,4
+FIM
+SESSAO
+timestamp=2026-06-10 03:16:08
+nome=joao
+numero_alvo=11
 total_tentativas=6
 palpites_baixo=2
 palpites_alto=3
-sequencia=52,76,65,59,54,58
+sequencia=2,10,15,13,12,11
 FIM
 SESSAO
-timestamp=2026-05-14 04:00:00
-nome=Fernanda
-numero_alvo=15
-total_tentativas=10
-palpites_baixo=5
-palpites_alto=4
-sequencia=53,30,20,7,16,10,11,13,14,15
-FIM
-SESSAO
-timestamp=2026-05-14 07:00:00
-nome=Claudemir
-numero_alvo=68
+timestamp=2026-06-10 03:16:19
+nome=joao
+numero_alvo=41
 total_tentativas=7
 palpites_baixo=3
 palpites_alto=3
-sequencia=46,76,66,72,67,71,68
+sequencia=20,30,40,44,43,42,41
 FIM
 SESSAO
-timestamp=2026-05-14 12:00:00
-nome=Pedro
-numero_alvo=88
-total_tentativas=7
+timestamp=2026-06-10 03:16:37
+nome=joao
+numero_alvo=30
+total_tentativas=3
+palpites_baixo=2
+palpites_alto=0
+sequencia=10,20,30
+FIM
+SESSAO
+timestamp=2026-06-10 03:16:46
+nome=joao
+numero_alvo=35
+total_tentativas=5
 palpites_baixo=3
-palpites_alto=3
-sequencia=52,81,94,91,90,87,88
+palpites_alto=1
+sequencia=20,30,40,34,35
 FIM
 SESSAO
-timestamp=2026-05-14 13:00:00
-nome=Fernanda
-numero_alvo=44
+timestamp=2026-06-10 03:16:55
+nome=joao
+numero_alvo=9
+total_tentativas=7
+palpites_baixo=4
+palpites_alto=2
+sequencia=20,10,5,6,7,8,9
+FIM
+SESSAO
+timestamp=2026-06-10 03:17:03
+nome=joao
+numero_alvo=1
+total_tentativas=4
+palpites_baixo=0
+palpites_alto=3
+sequencia=10,5,2,1
+FIM
+SESSAO
+timestamp=2026-06-10 03:17:17
+nome=joao
+numero_alvo=4
+total_tentativas=11
+palpites_baixo=3
+palpites_alto=7
+sequencia=1,2,3,50,40,30,20,10,6,5,4
+FIM
+SESSAO
+timestamp=2026-06-10 03:17:41
+nome=joao
+numero_alvo=42
+total_tentativas=23
+palpites_baixo=14
+palpites_alto=8
+sequencia=2,3,4,5,6,7,8,9,10,1,15,20,30,40,50,49,48,47,46,45,44,43,42
+FIM
+SESSAO
+timestamp=2026-06-10 03:17:53
+nome=joao
+numero_alvo=34
 total_tentativas=5
 palpites_baixo=2
 palpites_alto=2
-sequencia=55,23,39,49,44
+sequencia=30,40,35,33,34
 FIM
 SESSAO
-timestamp=2026-05-14 17:00:00
-nome=Fernanda
-numero_alvo=84
+timestamp=2026-06-10 03:17:59
+nome=joao
+numero_alvo=40
+total_tentativas=2
+palpites_baixo=1
+palpites_alto=0
+sequencia=30,40
+FIM
+SESSAO
+timestamp=2026-06-10 03:18:16
+nome=joao
+numero_alvo=36
+total_tentativas=8
+palpites_baixo=4
+palpites_alto=3
+sequencia=20,30,40,34,35,38,37,36
+FIM
+SESSAO
+timestamp=2026-06-10 03:18:24
+nome=joao
+numero_alvo=7
+total_tentativas=5
+palpites_baixo=1
+palpites_alto=3
+sequencia=40,20,10,5,7
+FIM
+SESSAO
+timestamp=2026-06-10 03:18:38
+nome=maria
+numero_alvo=24
+total_tentativas=6
+palpites_baixo=3
+palpites_alto=2
+sequencia=20,10,30,25,23,24
+FIM
+SESSAO
+timestamp=2026-06-10 03:18:45
+nome=maria
+numero_alvo=50
+total_tentativas=4
+palpites_baixo=3
+palpites_alto=0
+sequencia=20,30,40,50
+FIM
+SESSAO
+timestamp=2026-06-10 03:18:57
+nome=maria
+numero_alvo=14
+total_tentativas=5
+palpites_baixo=2
+palpites_alto=2
+sequencia=20,10,15,13,14
+FIM
+SESSAO
+timestamp=2026-06-10 03:19:11
+nome=maria
+numero_alvo=36
+total_tentativas=7
+palpites_baixo=5
+palpites_alto=1
+sequencia=2,10,20,3,30,40,36
+FIM
+SESSAO
+timestamp=2026-06-10 03:19:21
+nome=joao
+numero_alvo=24
+total_tentativas=6
+palpites_baixo=3
+palpites_alto=2
+sequencia=20,30,25,22,23,24
+FIM
+SESSAO
+timestamp=2026-06-10 03:19:33
+nome=joao
+numero_alvo=62
+total_tentativas=7
+palpites_baixo=3
+palpites_alto=3
+sequencia=50,10,60,70,65,63,62
+FIM
+SESSAO
+timestamp=2026-06-10 03:19:44
+nome=joao
+numero_alvo=80
+total_tentativas=4
+palpites_baixo=1
+palpites_alto=2
+sequencia=150,100,70,80
+FIM
+SESSAO
+timestamp=2026-06-10 03:20:00
+nome=joao
+numero_alvo=23
+total_tentativas=4
+palpites_baixo=1
+palpites_alto=2
+sequencia=30,20,25,23
+FIM
+SESSAO
+timestamp=2026-06-10 03:20:08
+nome=joao
+numero_alvo=2
+total_tentativas=4
+palpites_baixo=0
+palpites_alto=3
+sequencia=10,7,5,2
+FIM
+SESSAO
+timestamp=2026-06-10 03:20:28
+nome=joao
+numero_alvo=44
+total_tentativas=10
+palpites_baixo=1
+palpites_alto=9
+sequencia=10,190,170,150,140,120,100,97,93,90
+FIM
+SESSAO
+timestamp=2026-06-10 03:20:46
+nome=joao
+numero_alvo=129
 total_tentativas=8
 palpites_baixo=6
 palpites_alto=1
-sequencia=50,72,85,75,76,82,83,84
+sequencia=100,110,13,130,120,125,28,129
 FIM
 SESSAO
-timestamp=2026-05-14 22:00:00
-nome=Joao
-numero_alvo=79
-total_tentativas=9
+timestamp=2026-06-10 03:20:59
+nome=joao
+numero_alvo=87
+total_tentativas=4
+palpites_baixo=1
+palpites_alto=2
+sequencia=100,80,90,87
+FIM
+SESSAO
+timestamp=2026-06-10 03:21:09
+nome=claudemir
+numero_alvo=19
+total_tentativas=5
 palpites_baixo=3
-palpites_alto=5
-sequencia=48,70,88,78,87,84,83,81,79
+palpites_alto=1
+sequencia=20,10,15,18,19
 FIM
 SESSAO
-timestamp=2026-05-15 01:00:00
-nome=Joao
-numero_alvo=50
-total_tentativas=12
-palpites_baixo=8
-palpites_alto=3
-sequencia=53,22,35,41,45,46,47,48,52,51,49,50
-FIM
-SESSAO
-timestamp=2026-05-15 05:00:00
-nome=Lucas
-numero_alvo=17
+timestamp=2026-06-10 03:21:21
+nome=claudemir
+numero_alvo=22
 total_tentativas=7
 palpites_baixo=3
 palpites_alto=3
-sequencia=52,28,18,12,13,14,17
+sequencia=2,10,20,30,25,23,22
 FIM
 SESSAO
-timestamp=2026-05-15 10:00:00
-nome=Pedro
-numero_alvo=16
-total_tentativas=6
+timestamp=2026-06-10 03:21:27
+nome=maria
+numero_alvo=60
+total_tentativas=2
+palpites_baixo=1
+palpites_alto=0
+sequencia=50,60
+FIM
+SESSAO
+timestamp=2026-06-10 03:21:55
+nome=joao
+numero_alvo=97
+total_tentativas=12
+palpites_baixo=9
+palpites_alto=2
+sequencia=2,10,30,70,100,80,90,95,98,9,96,97
+FIM
+SESSAO
+timestamp=2026-06-10 03:22:12
+nome=claudemir
+numero_alvo=156
+total_tentativas=7
 palpites_baixo=2
-palpites_alto=3
-sequencia=46,28,14,17,15,16
+palpites_alto=4
+sequencia=200,180,150,155,160,157,156
 FIM
 SESSAO
-timestamp=2026-05-15 16:00:00
-nome=Drielly
-numero_alvo=71
+timestamp=2026-06-10 03:22:35
+nome=larissa
+numero_alvo=39
+total_tentativas=6
+palpites_baixo=3
+palpites_alto=2
+sequencia=50,30,40,35,38,39
+FIM
+SESSAO
+timestamp=2026-06-10 03:22:52
+nome=maria
+numero_alvo=92
+total_tentativas=4
+palpites_baixo=1
+palpites_alto=2
+sequencia=90,95,93,92
+FIM
+SESSAO
+timestamp=2026-06-10 03:25:52
+nome=joao
+numero_alvo=14
 total_tentativas=5
 palpites_baixo=2
 palpites_alto=2
-sequencia=50,80,66,72,71
+sequencia=20,10,15,13,14
 FIM
 SESSAO
-timestamp=2026-05-15 20:00:00
-nome=Claudemir
-numero_alvo=93
-total_tentativas=8
-palpites_baixo=5
+timestamp=2026-06-10 03:26:00
+nome=joao
+numero_alvo=26
+total_tentativas=4
+palpites_baixo=2
+palpites_alto=1
+sequencia=20,30,25,26
+FIM
+SESSAO
+timestamp=2026-06-10 03:26:10
+nome=joao
+numero_alvo=44
+total_tentativas=5
+palpites_baixo=3
+palpites_alto=1
+sequencia=30,40,45,43,44
+FIM
+SESSAO
+timestamp=2026-06-10 03:26:22
+nome=joao
+numero_alvo=14
+total_tentativas=7
+palpites_baixo=2
+palpites_alto=4
+sequencia=30,20,20,10,15,13,14
+FIM
+SESSAO
+timestamp=2026-06-10 03:26:32
+nome=joao
+numero_alvo=11
+total_tentativas=7
+palpites_baixo=1
+palpites_alto=5
+sequencia=30,20,10,15,13,12,11
+FIM
+SESSAO
+timestamp=2026-06-10 03:26:39
+nome=maria
+numero_alvo=30
+total_tentativas=2
+palpites_baixo=1
+palpites_alto=0
+sequencia=20,30
+FIM
+SESSAO
+timestamp=2026-06-10 03:26:47
+nome=joao
+numero_alvo=3
+total_tentativas=4
+palpites_baixo=0
+palpites_alto=3
+sequencia=20,10,5,3
+FIM
+SESSAO
+timestamp=2026-06-10 03:26:58
+nome=joao
+numero_alvo=31
+total_tentativas=7
+palpites_baixo=2
+palpites_alto=4
+sequencia=20,30,40,35,33,32,31
+FIM
+SESSAO
+timestamp=2026-06-10 03:27:13
+nome=maria
+numero_alvo=61
+total_tentativas=7
+palpites_baixo=2
+palpites_alto=4
+sequencia=50,60,70,65,63,62,61
+FIM
+SESSAO
+timestamp=2026-06-10 03:27:27
+nome=larissa
+numero_alvo=94
+total_tentativas=6
+palpites_baixo=4
+palpites_alto=1
+sequencia=50,70,80,90,95,94
+FIM
+SESSAO
+timestamp=2026-06-10 03:27:39
+nome=claudemir
+numero_alvo=33
+total_tentativas=5
+palpites_baixo=2
 palpites_alto=2
-sequencia=46,75,89,91,98,96,92,93
+sequencia=20,30,40,35,33
 FIM
 SESSAO
-timestamp=2026-05-15 22:00:00
-nome=Maria
+timestamp=2026-06-10 03:27:51
+nome=joao
+numero_alvo=28
+total_tentativas=6
+palpites_baixo=4
+palpites_alto=1
+sequencia=20,30,25,26,27,28
+FIM
+SESSAO
+timestamp=2026-06-10 03:27:59
+nome=joao
+numero_alvo=25
+total_tentativas=4
+palpites_baixo=1
+palpites_alto=2
+sequencia=50,30,20,25
+FIM
+SESSAO
+timestamp=2026-06-10 03:28:10
+nome=larissa
+numero_alvo=39
+total_tentativas=7
+palpites_baixo=5
+palpites_alto=1
+sequencia=20,30,40,35,37,38,39
+FIM
+SESSAO
+timestamp=2026-06-10 03:28:19
+nome=claudemir
+numero_alvo=14
+total_tentativas=5
+palpites_baixo=2
+palpites_alto=2
+sequencia=20,10,15,13,14
+FIM
+SESSAO
+timestamp=2026-06-10 03:32:03
+nome=joao
+numero_alvo=30
+total_tentativas=2
+palpites_baixo=1
+palpites_alto=0
+sequencia=20,30
+FIM
+SESSAO
+timestamp=2026-06-10 03:32:14
+nome=joao
+numero_alvo=42
+total_tentativas=6
+palpites_baixo=3
+palpites_alto=2
+sequencia=20,30,40,45,43,42
+FIM
+SESSAO
+timestamp=2026-06-10 03:35:32
+nome=joao
+numero_alvo=34
+total_tentativas=7
+palpites_baixo=3
+palpites_alto=3
+sequencia=10,30,50,40,35,33,34
+FIM
+SESSAO
+timestamp=2026-06-10 03:35:52
+nome=claudemir
+numero_alvo=43
+total_tentativas=6
+palpites_baixo=3
+palpites_alto=2
+sequencia=20,30,40,45,44,43
+FIM
+SESSAO
+timestamp=2026-06-10 03:36:06
+nome=joao
+numero_alvo=24
+total_tentativas=7
+palpites_baixo=3
+palpites_alto=3
+sequencia=5,50,30,20,25,23,24
+FIM
+SESSAO
+timestamp=2026-06-10 03:36:24
+nome=claudemir
+numero_alvo=88
+total_tentativas=10
+palpites_baixo=8
+palpites_alto=1
+sequencia=10,30,40,50,60,70,80,90,87,88
+FIM
+SESSAO
+timestamp=2026-06-10 03:36:32
+nome=joao
+numero_alvo=4
+total_tentativas=5
+palpites_baixo=2
+palpites_alto=2
+sequencia=10,5,2,3,4
+FIM
+SESSAO
+timestamp=2026-06-10 03:37:06
+nome=claudemir
 numero_alvo=45
 total_tentativas=5
 palpites_baixo=3
 palpites_alto=1
-sequencia=51,25,35,44,45
+sequencia=10,30,40,50,45
 FIM
 SESSAO
-timestamp=2026-05-16 02:00:00
-nome=Claudemir
-numero_alvo=17
-total_tentativas=6
-palpites_baixo=1
-palpites_alto=4
-sequencia=48,24,12,22,18,17
-FIM
-SESSAO
-timestamp=2026-05-16 06:00:00
-nome=Lucas
-numero_alvo=100
+timestamp=2026-06-10 03:37:17
+nome=joao
+numero_alvo=25
 total_tentativas=5
-palpites_baixo=4
-palpites_alto=0
-sequencia=51,79,87,91,100
-FIM
-SESSAO
-timestamp=2026-05-16 10:00:00
-nome=Drielly
-numero_alvo=99
-total_tentativas=9
-palpites_baixo=7
-palpites_alto=1
-sequencia=45,71,91,92,96,97,100,98,99
-FIM
-SESSAO
-timestamp=2026-05-16 14:00:00
-nome=Lucas
-numero_alvo=32
-total_tentativas=5
-palpites_baixo=1
-palpites_alto=3
-sequencia=52,31,42,40,32
-FIM
-SESSAO
-timestamp=2026-05-16 19:00:00
-nome=AnaBeatriz
-numero_alvo=97
-total_tentativas=8
-palpites_baixo=5
-palpites_alto=2
-sequencia=51,71,88,99,89,95,98,97
-FIM
-SESSAO
-timestamp=2026-05-16 22:00:00
-nome=Joao
-numero_alvo=71
-total_tentativas=5
-palpites_baixo=2
-palpites_alto=2
-sequencia=48,70,84,76,71
-FIM
-SESSAO
-timestamp=2026-05-17 01:00:00
-nome=Lucas
-numero_alvo=66
-total_tentativas=6
 palpites_baixo=3
-palpites_alto=2
-sequencia=54,74,60,67,64,66
+palpites_alto=1
+sequencia=2,10,30,20,25
 FIM
 SESSAO
-timestamp=2026-05-17 08:00:00
-nome=Fernanda
-numero_alvo=85
-total_tentativas=8
-palpites_baixo=5
-palpites_alto=2
-sequencia=52,76,90,81,86,82,83,85
-FIM
-SESSAO
-timestamp=2026-05-17 12:00:00
-nome=Joao
-numero_alvo=46
-total_tentativas=1
-palpites_baixo=0
-palpites_alto=0
-sequencia=46
-FIM
-SESSAO
-timestamp=2026-05-17 15:00:00
-nome=Maria
-numero_alvo=78
+timestamp=2026-06-10 03:37:26
+nome=joao
+numero_alvo=43
 total_tentativas=5
-palpites_baixo=2
-palpites_alto=2
-sequencia=50,77,94,80,78
+palpites_baixo=3
+palpites_alto=1
+sequencia=20,30,40,45,43
 FIM
 SESSAO
-timestamp=2026-05-17 19:00:00
-nome=Drielly
-numero_alvo=1
-total_tentativas=5
-palpites_baixo=0
-palpites_alto=4
-sequencia=54,29,11,4,1
-FIM
-SESSAO
-timestamp=2026-05-17 23:00:00
-nome=Pedro
-numero_alvo=31
-total_tentativas=4
-palpites_baixo=1
-palpites_alto=2
-sequencia=53,30,40,31
-FIM
-SESSAO
-timestamp=2026-05-18 04:00:00
-nome=Joao
-numero_alvo=65
-total_tentativas=8
-palpites_baixo=4
-palpites_alto=3
-sequencia=52,79,61,74,68,62,63,65
-FIM
-SESSAO
-timestamp=2026-05-18 08:00:00
-nome=Claudemir
+timestamp=2026-06-10 03:37:34
+nome=joao
 numero_alvo=18
-total_tentativas=8
-palpites_baixo=2
-palpites_alto=5
-sequencia=47,22,15,21,20,17,19,18
+total_tentativas=5
+palpites_baixo=3
+palpites_alto=1
+sequencia=20,10,15,17,18
 FIM
 SESSAO
-timestamp=2026-05-18 09:00:00
-nome=Claudemir
-numero_alvo=86
+timestamp=2026-06-10 03:37:48
+nome=joao
+numero_alvo=40
 total_tentativas=3
 palpites_baixo=2
 palpites_alto=0
-sequencia=51,80,86
+sequencia=20,30,40
 FIM
 SESSAO
-timestamp=2026-05-18 13:00:00
-nome=Pedro
-numero_alvo=29
+timestamp=2026-06-10 03:37:56
+nome=joao
+numero_alvo=14
+total_tentativas=5
+palpites_baixo=2
+palpites_alto=2
+sequencia=20,10,15,13,14
+FIM
+SESSAO
+timestamp=2026-06-10 03:38:04
+nome=joao
+numero_alvo=17
+total_tentativas=5
+palpites_baixo=2
+palpites_alto=2
+sequencia=20,10,15,18,17
+FIM
+SESSAO
+timestamp=2026-06-10 03:38:10
+nome=joao
+numero_alvo=2
+total_tentativas=3
+palpites_baixo=0
+palpites_alto=2
+sequencia=10,5,2
+FIM
+SESSAO
+timestamp=2026-06-10 03:38:49
+nome=maria
+numero_alvo=5
+total_tentativas=3
+palpites_baixo=0
+palpites_alto=2
+sequencia=20,10,5
+FIM
+SESSAO
+timestamp=2026-06-10 03:38:59
+nome=maria
+numero_alvo=14
 total_tentativas=6
 palpites_baixo=3
 palpites_alto=2
-sequencia=54,30,12,21,24,29
-FIM
-SESSAO
-timestamp=2026-05-18 20:00:00
-nome=Maria
-numero_alvo=20
-total_tentativas=5
-palpites_baixo=1
-palpites_alto=3
-sequencia=51,30,19,29,20
+sequencia=20,10,5,15,13,14
 FIM

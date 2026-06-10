@@ -42,13 +42,14 @@ void jogar() {
         case 3: dif = DIFICIL; max_alvo = 200; limite = 10; ref_motivacional = 9; break;
         default: dif = MEDIO;  max_alvo = 100; limite = 0;  ref_motivacional = 7; break;
     }
-    (void)dif;
+    int multiplicador = (dif == FACIL) ? 1 : (dif == MEDIO) ? 2 : 3;
 
     int alvo = (rand() % max_alvo) + 1;
     int palpite, tentativas = 0;
     int palpites_baixo = 0, palpites_alto = 0;
     int sequencia[MAX_PALPITES];
     int acertou = 0;
+    int intervalo_baixo = 1, intervalo_alto = max_alvo;
 
     if (limite > 0)
         printf("\nOk %s! Adivinhe o numero entre 1 e %d. Voce tem %d tentativas!\n", nome, max_alvo, limite);
@@ -62,7 +63,27 @@ void jogar() {
         }
         if (limite > 0)
             printf("[%d/%d] ", tentativas + 1, limite);
-        palpite = ler_inteiro("Palpite: ", 1, max_alvo);
+
+        int dicas = tem_dica(nome);
+        printf("[Dicas: %d | digite 0 para usar] ", dicas);
+
+        palpite = ler_inteiro("Palpite: ", 0, max_alvo);
+
+        // usa dica de intervalo
+        if (palpite == 0) {
+            if (tem_dica(nome) > 0) {
+                int meio = (intervalo_baixo + intervalo_alto) / 2;
+                if (alvo <= meio)
+                    printf(">> DICA: o numero esta entre %d e %d (metade inferior)\n", intervalo_baixo, meio);
+                else
+                    printf(">> DICA: o numero esta entre %d e %d (metade superior)\n", meio + 1, intervalo_alto);
+                usar_dica(nome);
+            } else {
+                printf("Voce nao tem dicas disponiveis.\n");
+            }
+            continue;
+        }
+
         sequencia[tentativas] = palpite;
         tentativas++;
 
@@ -73,9 +94,11 @@ void jogar() {
         } else if (palpite < alvo) {
             printf("Muito baixo!\n");
             palpites_baixo++;
+            if (palpite >= intervalo_baixo) intervalo_baixo = palpite + 1;
         } else {
             printf("Muito alto!\n");
             palpites_alto++;
+            if (palpite <= intervalo_alto) intervalo_alto = palpite - 1;
         }
     }
 
@@ -92,10 +115,15 @@ void jogar() {
 
     salvar_historico(&s);
     if (acertou) {
-        atualizar_ranking(nome, tentativas, s.timestamp);
+        // passa so a data (sem hora) para o ranking evitar quebra no fscanf
+        char data_curta[11];
+        strncpy(data_curta, s.timestamp, 10);
+        data_curta[10] = '\0';
+        atualizar_ranking(nome, tentativas, data_curta);
         mensagem_motivacional(tentativas, ref_motivacional);
-        // moedas: max 20 na primeira tentativa, diminui 1 por tentativa, minimo 1
-        int moedas = tentativas <= 20 ? 21 - tentativas : 1;
+        // moedas: base por eficiencia x multiplicador de dificuldade
+        int base = tentativas <= 20 ? 21 - tentativas : 1;
+        int moedas = base * multiplicador;
         adicionar_moedas(nome, moedas);
     }
     printf("Progresso salvo!\n");
