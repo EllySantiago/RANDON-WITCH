@@ -112,7 +112,9 @@ void analisar_historico() {
     }
 
     printf("\n=== RELATORIO POR PARTIDA ===\n");
-    for (int i = 0; i < qtd; i++)
+    printf("(Exibindo as ultimas 10 de %d partidas)\n", qtd);
+    int inicio = qtd > 10 ? qtd - 10 : 0;
+    for (int i = inicio; i < qtd; i++)
         exibir_sessao(&filtradas[i], i + 1);
 
     // estatisticas agregadas usando recursao
