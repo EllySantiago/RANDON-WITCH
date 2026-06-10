@@ -9,4 +9,10 @@ void abrir_loja(const char *nome);
 int  tem_dica(const char *nome);
 void usar_dica(const char *nome);
 
+int  tem_bonus(const char *nome);
+void usar_bonus(const char *nome);
+
+int  tem_dezena(const char *nome);
+void usar_dezena(const char *nome);
+
 #endif

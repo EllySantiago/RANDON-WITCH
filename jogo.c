@@ -51,10 +51,21 @@ void jogar() {
     int acertou = 0;
     int intervalo_baixo = 1, intervalo_alto = max_alvo;
 
+    if (dif == DIFICIL && tem_bonus(nome) > 0) {
+        limite += 3;
+        usar_bonus(nome);
+        printf("\nBonus aplicado! Voce tem %d tentativas nesta partida.\n", limite);
+    }
+
     if (limite > 0)
         printf("\nOk %s! Adivinhe o numero entre 1 e %d. Voce tem %d tentativas!\n", nome, max_alvo, limite);
     else
         printf("\nOk %s! Adivinhe o numero entre 1 e %d.\n", nome, max_alvo);
+
+    if (tem_dezena(nome) > 0) {
+        printf(">> DEZENA REVELADA: o digito das dezenas do numero alvo e %d.\n", alvo / 10);
+        usar_dezena(nome);
+    }
 
     while (1) {
         if (limite > 0 && tentativas >= limite) {
@@ -69,7 +80,6 @@ void jogar() {
 
         palpite = ler_inteiro("Palpite: ", 0, max_alvo);
 
-        // usa dica de intervalo
         if (palpite == 0) {
             if (tem_dica(nome) > 0) {
                 int meio = (intervalo_baixo + intervalo_alto) / 2;
@@ -115,13 +125,11 @@ void jogar() {
 
     salvar_historico(&s);
     if (acertou) {
-        // passa so a data (sem hora) para o ranking evitar quebra no fscanf
         char data_curta[11];
         strncpy(data_curta, s.timestamp, 10);
         data_curta[10] = '\0';
         atualizar_ranking(nome, tentativas, data_curta);
         mensagem_motivacional(tentativas, ref_motivacional);
-        // moedas: base por eficiencia x multiplicador de dificuldade
         int base = tentativas <= 20 ? 21 - tentativas : 1;
         int moedas = base * multiplicador;
         adicionar_moedas(nome, moedas);
