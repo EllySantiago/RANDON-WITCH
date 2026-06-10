@@ -12,7 +12,7 @@ Curso de Analise e Desenvolvimento de Sistemas — 2026.1
 
 ## Sobre o Projeto
 
-Jogo de adivinhacao desenvolvido em linguagem C onde o sistema sorteia um numero dentro de um intervalo definido pela dificuldade escolhida. O jogador tenta descobri-lo atraves de palpites e recebe uma dica a cada tentativa ("Muito baixo" / "Muito alto" / "Acertou"). Toda partida e registrada em arquivo, alimentando um modulo de analise estatistica (com recursao) e um ranking de jogadores.
+Jogo de adivinhacao desenvolvido em linguagem C onde o sistema sorteia um numero dentro de um intervalo definido pela dificuldade escolhida. O jogador tenta descobri-lo atraves de palpites e recebe uma dica a cada tentativa ("Muito baixo" / "Muito alto" / "Acertou"). Toda partida e registrada em arquivo, alimentando um modulo de analise estatistica (com recursao) e um ranking de jogadores. (link do docs para as historias de usuario e diagramas: https://docs.google.com/document/d/1Onn0zreH8-ji0cUPtdZGIiET4_C9ct-UDlEsmH9ZOP0/edit?usp=sharing )
 
 ---
 
