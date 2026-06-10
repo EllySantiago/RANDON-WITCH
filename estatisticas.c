@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <math.h>
 #include "estatisticas.h"
@@ -85,9 +86,16 @@ void analisar_historico() {
         printf("\nJogadores no historico:\n");
         for (int i = 0; i < njog; i++)
             printf("  %d - %s\n", i + 1, jogadores[i]);
-        printf("\nNome do jogador: ");
-        scanf("%49s", filtro);
+        printf("\nEscolha o numero ou digite o nome: ");
+        char entrada[50];
+        scanf("%49s", entrada);
         limpar_buffer();
+        // verifica se e numero
+        int escolha = atoi(entrada);
+        if (escolha >= 1 && escolha <= njog)
+            strncpy(filtro, jogadores[escolha - 1], 49);
+        else
+            strncpy(filtro, entrada, 49);
     }
 
     Sessao filtradas[MAX_SESSOES];
