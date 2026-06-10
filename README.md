@@ -72,7 +72,7 @@ No modo Dificil, se o jogador esgotar as 10 tentativas sem acertar, o jogo encer
 - Compativel com compiladores C11
 - Sem dependencias externas (apenas a libm, via `-lm`)
 - Persistencia em arquivo texto simples
-- Codigo modular, legivel e comentado de forma enxuta
+- Codigo modular e legivel
 
 ---
 
@@ -81,17 +81,22 @@ No modo Dificil, se o jogador esgotar as 10 tentativas sem acertar, o jogo encer
 ```
 RANDON-WITCH/
 ├── main.c              # Menu principal e ponto de entrada
-├── jogo.c / .h         # Logica da partida e selecao de dificuldade
+├── jogo.c / .h         # Logica da partida, dificuldade e itens da loja
 ├── historico.c / .h    # Escrita e leitura do arquivo de sessoes
 ├── estatisticas.c / .h # Estatisticas e sugestoes (com recursao)
 ├── ranking.c / .h      # Registro e exibicao do ranking
+├── loja.c / .h         # Loja de premios, moedas e itens do jogador
 ├── utils.c / .h        # Leitura validada de entrada, limpeza de buffer e EOF handling
 ├── tipos.h             # Structs Jogador e Sessao, enum Dificuldade
 ├── Makefile            # Compilacao e execucao
 ├── historico.txt       # Arquivo de sessoes (gerado em tempo de execucao)
 ├── ranking.txt         # Arquivo de ranking (gerado em tempo de execucao)
-├── screencast.html     # Screencast interativo da execucao
-├── docs/               # Imagens do sprint board e issue tracker
+├── moedas.txt          # Saldo de moedas por jogador (gerado em tempo de execucao)
+├── itens.txt           # Dicas de intervalo disponiveis por jogador
+├── bonus.txt           # Palpites bonus disponiveis por jogador
+├── dezena.txt          # Dezenas reveladas disponiveis por jogador
+├── screencast.html     # Screencast interativo da execucao (Sprint 02)
+├── docs/               # Imagens do sprint board, backlog e issue tracker
 └── README.md
 ```
 
@@ -114,7 +119,8 @@ make clean  # remove o executavel
 1 - Jogar
 2 - Analisar historico
 3 - Ranking
-4 - Sair
+4 - Loja
+5 - Sair
 ```
 
 ---
@@ -167,19 +173,17 @@ O tracker de issues esta disponivel na aba **Issues** do repositorio GitHub. Iss
 
 ## Testes de Sistema
 
-O screencast completo da execucao esta disponivel em [`screencast.html`](screencast.html) — abre direto no navegador e demonstra:
+O screencast completo da execucao esta disponivel em [`screencast.html`](screencast.html) — abre direto no navegador e demonstra as novas funcionalidades da Sprint 02:
 
-- Selecao do nivel de dificuldade (Facil, Medio, Dificil)
-- Entrada invalida nao-numerica (`abc`) com mensagem de erro e continuacao da partida
-- Valor fora do intervalo (`150` no modo Medio) rejeitado sem contar tentativa
-- Modo Dificil com contador de tentativas `[X/10]` e game over ao esgotar
-- Sequencia de palpites com dicas "Muito baixo" / "Muito alto"
-- Acerto com exibicao do total de tentativas e registro no historico
-- Analise do historico com estatisticas e sugestao de estrategia
+- Jogar partida no modo Medio com ganho de moedas ao acertar
+- Loja de premios: compra da Dica de Intervalo e validacao de saldo insuficiente
+- Modo Dificil com contador `[X/10]`, indicador de dicas e game over ao esgotar
+- Analise do historico com 103+ sessoes, estatisticas e sugestao de estrategia
+- Ranking com nome, acertos, tentativas totais, moedas e data do ultimo acerto
 
 ---
 
-## Programacao em Par
+## Programacao em Par — Sprint 01
 
 Esta sprint foi desenvolvida em tres sessoes de pair programming:
 
@@ -193,9 +197,45 @@ A experiencia permitiu identificar em tempo real inconsistencias na validacao de
 
 ---
 
-## Funcionalidade Prevista — Loja de Premios
+## Loja de Premios (H5/H6 — Sprint 02)
 
-Modulo planejado para uma proxima entrega: troca das recompensas obtidas ao vencer partidas por premios em uma loja. Ainda **nao implementado** no estado atual do projeto.
+Ao acertar uma partida o jogador ganha moedas proporcionais a eficiencia (menos tentativas = mais moedas, multiplicado pela dificuldade). As moedas podem ser trocadas por itens na loja (opcao 4 do menu).
+
+| Item | Custo | Efeito |
+|------|-------|--------|
+| Dica de Intervalo | 30 moedas | Durante a partida, digite 0 para revelar se o alvo esta na metade superior ou inferior do intervalo atual |
+| Palpite Bonus | 50 moedas | Aplica +3 tentativas automaticamente ao iniciar o modo Dificil |
+| Revelar Dezena | 80 moedas | Revela o digito das dezenas do numero alvo ao iniciar a partida |
+
+---
+
+## Historias Implementadas — Sprint 02
+
+| Historia | Descricao | Status |
+|----------|-----------|--------|
+| H5 | Sistema de moedas: ganho proporcional a eficiencia e persistencia em arquivo | Concluido |
+| H6 | Loja de premios: 3 itens funcionais com debito de saldo e aplicacao automatica | Concluido |
+| H7 | Data do ultimo acerto adicionada ao ranking | Concluido |
+
+---
+
+## Sprint 02 — Quadro e Backlog
+
+![Quadro da Sprint 02](docs/sprint02_board.png)
+
+A Sprint 02 cobre a semana de 02/06 a 09/06/2026 (Capstone 3). As historias H5, H6 e H7 foram implementadas e movidas para **Concluido**.
+
+---
+
+## Programacao em Par — Sprint 02
+
+| Par | Integrantes | Funcionalidades |
+|-----|-------------|-----------------|
+| Par 4 | Ana Beatriz + Drielly Santiago | H5 — Sistema de moedas: calculo proporcional, persistencia em moedas.txt e exibicao de saldo |
+| Par 5 | Ana Beatriz + Claudemir Araujo | H6 — Loja de premios: menu de itens, compra com validacao de saldo, aplicacao de Palpite Bonus e Revelar Dezena |
+| Par 6 | Drielly Santiago + Claudemir Araujo | H7 — Data no ranking: campo ultima_data em Jogador, leitura/escrita com fscanf/fprintf e exibicao na coluna do ranking |
+
+A experiencia da Sprint 02 permitiu identificar a necessidade de arquivos separados por tipo de item (bonus.txt, dezena.txt) para manter a consistencia com o padrao ja adotado para itens.txt.
 
 ---
 

@@ -53,4 +53,4 @@
 | sprints.md | Drielly | ✅ Concluído |
 | plano-de-testes.md | Ana Beatriz | ✅ Concluído |
 | Wireframes/mockups na pasta docs/ | Ana Beatriz | ✅ Concluído |
-| Screencast final | Drielly | 🔄 Em andamento |
+| Screencast final (Sprint 02) | Drielly | ✅ Concluído |

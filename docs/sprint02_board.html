@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Sprint 02 Board — RANDON-WITCH</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0d1117; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; padding: 32px 24px; color: #c9d1d9; }
+  h1 { color: #58a6ff; font-size: 1.15rem; margin-bottom: 4px; }
+  .meta { color: #8b949e; font-size: 12px; margin-bottom: 24px; }
+  .board { display: flex; gap: 16px; }
+  .col { flex: 1; min-width: 200px; }
+  .col-header { font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 6px 6px 0 0; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .col-backlog .col-header { background: #161b22; color: #8b949e; border: 1px solid #30363d; }
+  .col-doing   .col-header { background: #1f3a5f; color: #58a6ff; border: 1px solid #1f6feb; }
+  .col-done    .col-header { background: #1a3a2a; color: #3fb950; border: 1px solid #2ea043; }
+  .card { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 10px 12px; margin-bottom: 8px; font-size: 13px; }
+  .card-title { font-weight: 500; margin-bottom: 4px; }
+  .card-meta { font-size: 11px; color: #8b949e; }
+  .tag { display: inline-block; padding: 1px 7px; border-radius: 12px; font-size: 10px; font-weight: 600; margin-right: 4px; }
+  .tag-feat  { background: #1f3a5f; color: #58a6ff; }
+  .tag-docs  { background: #2d1b69; color: #a5a0f8; }
+  .tag-test  { background: #2e2a00; color: #e3b341; }
+  .tag-fix   { background: #3a1a1a; color: #f85149; }
+  .count { color: #8b949e; font-size: 11px; margin-bottom: 6px; padding-left: 2px; }
+</style>
+</head>
+<body>
+<h1>📋 RANDON-WITCH — Sprint 02</h1>
+<div class="meta">02/06/2026 → 09/06/2026 · Capstone 3 · Objetivo: projeto polido, loja de prêmios, 100+ testes</div>
+
+<div class="board">
+  <!-- Backlog -->
+  <div class="col col-backlog">
+    <div class="col-header">📌 Backlog</div>
+    <div class="count">0 itens</div>
+    <div style="color:#8b949e; font-size:12px; padding: 8px 0;">Backlog vazio — todas as histórias foram movidas para sprints.</div>
+  </div>
+
+  <!-- Em andamento -->
+  <div class="col col-doing">
+    <div class="col-header">🔄 Em Andamento</div>
+    <div class="count">0 itens</div>
+    <div style="color:#8b949e; font-size:12px; padding: 8px 0;">Nenhuma tarefa em andamento.</div>
+  </div>
+
+  <!-- Concluído -->
+  <div class="col col-done">
+    <div class="col-header">✅ Concluído</div>
+    <div class="count">11 itens</div>
+
+    <div class="card">
+      <div class="card-title">H5 — Sistema de moedas de prêmio</div>
+      <div class="card-meta"><span class="tag tag-feat">feat</span> Ana Beatriz · moedas.txt</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">H6 — Loja com menu de itens e compra</div>
+      <div class="card-meta"><span class="tag tag-feat">feat</span> Ana Beatriz · loja.c / loja.h</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">H7 — Adicionar data ao ranking</div>
+      <div class="card-meta"><span class="tag tag-feat">feat</span> Claudemir · ranking.c</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Refatoração: -std=c11, remoção de código desnecessário</div>
+      <div class="card-meta"><span class="tag tag-fix">fix</span> Claudemir · todos os módulos</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">CONTRIBUTING.md</div>
+      <div class="card-meta"><span class="tag tag-docs">docs</span> Claudemir</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Geração de 100+ sessões de teste em historico.txt</div>
+      <div class="card-meta"><span class="tag tag-test">test</span> Equipe · 103 sessões geradas</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">user-stories.md</div>
+      <div class="card-meta"><span class="tag tag-docs">docs</span> Drielly · H1–H10 documentadas</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">sprints.md</div>
+      <div class="card-meta"><span class="tag tag-docs">docs</span> Drielly · Sprint 01 e 02</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">plano-de-testes.md</div>
+      <div class="card-meta"><span class="tag tag-test">test</span> Ana Beatriz · 14 casos CT01–CT14</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Screencast final (Sprint 02)</div>
+      <div class="card-meta"><span class="tag tag-docs">docs</span> Drielly · screencast.html atualizado</div>
+    </div>
+
+  </div>
+
+  <!-- Pendente -->
+  <div class="col col-backlog" style="max-width:220px;">
+    <div class="col-header">⏳ Pendente</div>
+    <div class="count">1 item</div>
+    <div class="card">
+      <div class="card-title">GitHub Release v1.0 (deploy)</div>
+      <div class="card-meta"><span class="tag tag-feat">feat</span> Claudemir · tag v1.0 + binário</div>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:24px; color:#8b949e; font-size:11px;">
+  Sprint 02 · 10/11 tarefas concluídas ·
+  <a href="https://github.com/EllySantiago/RANDON-WITCH" style="color:#58a6ff;">github.com/EllySantiago/RANDON-WITCH</a>
+</div>
+</body>
+</html>

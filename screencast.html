@@ -2,14 +2,14 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>RANDON-WITCH — Screencast Sprint 01</title>
+<title>RANDON-WITCH — Screencast Sprint 02</title>
 <style>
   body { background:#1a1a2e; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; margin:0; font-family:sans-serif; }
   h2 { color:#58a6ff; margin-bottom:8px; font-size:1.1rem; letter-spacing:1px; }
   .terminal {
     background:#0d1117; border:1.5px solid #30363d; border-radius:10px;
-    width:700px; min-height:400px; padding:24px 28px;
-    font-family:'Courier New',monospace; font-size:14px; color:#c9d1d9;
+    width:720px; min-height:400px; padding:24px 28px;
+    font-family:'Courier New',monospace; font-size:13px; color:#c9d1d9;
     box-shadow:0 8px 40px #0006; position:relative;
   }
   .bar { display:flex; gap:7px; margin-bottom:18px; }
@@ -24,103 +24,222 @@
   .yellow{ color:#e3b341; }
   .red   { color:#f85149; }
   .dim   { color:#8b949e; }
-  .controls { margin-top:16px; display:flex; gap:12px; }
+  .gold  { color:#ffd700; }
+  .controls { margin-top:16px; display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
   button { background:#21262d; border:1px solid #30363d; color:#c9d1d9; padding:6px 18px; border-radius:6px; cursor:pointer; font-size:13px; }
   button:hover { background:#30363d; }
-  .badge { background:#1f6feb22; border:1px solid #1f6feb; color:#58a6ff; border-radius:20px; padding:3px 12px; font-size:12px; margin-bottom:12px; }
+  .badge { background:#1f6feb22; border:1px solid #1f6feb; color:#58a6ff; border-radius:20px; padding:3px 12px; font-size:12px; margin-bottom:6px; }
+  .scene-nav { display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap; justify-content:center; }
+  .scene-btn { background:#161b22; border:1px solid #30363d; color:#8b949e; padding:4px 12px; border-radius:4px; cursor:pointer; font-size:11px; }
+  .scene-btn:hover { color:#c9d1d9; border-color:#58a6ff; }
+  .url-bar { background:#161b22; border:1px solid #30363d; border-radius:6px; padding:4px 14px; font-family:'Courier New',monospace; font-size:12px; color:#58a6ff; margin-bottom:8px; width:700px; box-sizing:border-box; }
 </style>
 </head>
 <body>
-<h2>🎮 RANDON-WITCH — Jogo de Adivinhação</h2>
-<div class="badge">Sprint 01 · Entrega 03 · Screencast de Sistema</div>
+<h2>&#x1F3AE; RANDON-WITCH &#x2014; Jogo de Adivinhacao</h2>
+<div class="badge">Sprint 02 &middot; Capstone 3 &middot; Screencast de Sistema</div>
+<div class="url-bar">&#x1F517; https://github.com/EllySantiago/RANDON-WITCH</div>
+<div class="scene-nav">
+  <button class="scene-btn" onclick="playScene(0)">Cena 1: Jogar + Moedas (H1/H5)</button>
+  <button class="scene-btn" onclick="playScene(1)">Cena 2: Loja (H6)</button>
+  <button class="scene-btn" onclick="playScene(2)">Cena 3: Modo Dificil (H4)</button>
+  <button class="scene-btn" onclick="playScene(3)">Cena 4: Historico + Ranking (H2/H7)</button>
+</div>
 <div class="terminal">
   <div class="bar"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div>
-  <div class="title-bar">bash — jogo</div>
+  <div class="title-bar">bash &#x2014; jogo &nbsp;&nbsp;&nbsp; github.com/EllySantiago/RANDON-WITCH</div>
   <div id="screen"></div><span class="cursor" id="cur"></span>
 </div>
 <div class="controls">
-  <button onclick="restart()">↺ Reiniciar</button>
-  <button onclick="togglePause()">⏸ Pausar</button>
+  <button onclick="restart()">&#x21BA; Reiniciar</button>
+  <button onclick="togglePause()" id="pauseBtn">&#x23F8; Pausar</button>
 </div>
 
 <script>
-const frames = [
-  {t:300,  txt:'<span class="green">=== RANDON-WITCH: Jogo de Adivinhacao ===</span>\n'},
-  {t:600,  txt:'\n<span class="dim">1 - Jogar\n2 - Analisar historico\n3 - Ranking\n4 - Sair</span>\n'},
-  {t:900,  txt:'<span class="blue">Opcao: </span>'},
-  {t:1400, txt:'<span class="yellow">1</span>\n'},
-  {t:1800, txt:'\n<span class="blue">Seu nome (sem espacos): </span>'},
-  {t:2400, txt:'<span class="yellow">Drielly</span>\n'},
-  {t:2800, txt:'\n<span class="green">Ok Drielly! Adivinhe o numero entre 1 e 100.</span>\n'},
-  {t:3200, txt:'<span class="blue">Palpite: </span>'},
-  {t:3900, txt:'<span class="yellow">abc</span>\n'},
-  {t:4100, txt:'<span class="red">Entrada invalida. Digite um numero entre 1 e 100.</span>\n'},
-  {t:4400, txt:'<span class="blue">Palpite: </span>'},
-  {t:5100, txt:'<span class="yellow">150</span>\n'},
-  {t:5300, txt:'<span class="red">Valor fora do intervalo. Digite entre 1 e 100.</span>\n'},
-  {t:5600, txt:'<span class="blue">Palpite: </span>'},
-  {t:6300, txt:'<span class="yellow">50</span>\n'},
-  {t:6500, txt:'<span class="dim">Muito baixo!</span>\n'},
-  {t:6900, txt:'<span class="blue">Palpite: </span>'},
-  {t:7600, txt:'<span class="yellow">75</span>\n'},
-  {t:7800, txt:'<span class="dim">Muito alto!</span>\n'},
-  {t:8200, txt:'<span class="blue">Palpite: </span>'},
-  {t:8900, txt:'<span class="yellow">62</span>\n'},
-  {t:9100, txt:'<span class="dim">Muito alto!</span>\n'},
-  {t:9500, txt:'<span class="blue">Palpite: </span>'},
-  {t:10200,txt:'<span class="yellow">56</span>\n'},
-  {t:10400,txt:'<span class="dim">Muito baixo!</span>\n'},
-  {t:10800,txt:'<span class="blue">Palpite: </span>'},
-  {t:11500,txt:'<span class="yellow">59</span>\n'},
-  {t:11700,txt:'<span class="green">🎉 Acertou! Voce levou 5 tentativas.</span>\n'},
-  {t:12000,txt:'<span class="dim">Sessao registrada com sucesso.</span>\n'},
-  {t:12600,txt:'\n<span class="dim">1 - Jogar\n2 - Analisar historico\n3 - Ranking\n4 - Sair</span>\n'},
-  {t:12900,txt:'<span class="blue">Opcao: </span>'},
-  {t:13600,txt:'<span class="yellow">2</span>\n'},
-  {t:14000,txt:'\n<span class="green">--- Relatorio de Historico ---</span>\n'},
-  {t:14200,txt:'Sessoes totais    : <span class="yellow">1</span>\n'},
-  {t:14400,txt:'Media tentativas  : <span class="yellow">5.00</span>\n'},
-  {t:14600,txt:'Melhor sessao     : <span class="green">5 tentativas</span>\n'},
-  {t:14800,txt:'Pior sessao       : <span class="red">5 tentativas</span>\n'},
-  {t:15000,txt:'Vies baixo/alto   : <span class="yellow">40% / 60%</span>\n'},
-  {t:15400,txt:'\n<span class="blue">Sugestao: </span><span class="dim">Sua estrategia se aproxima de busca binaria. Continue!</span>\n'},
-  {t:16000,txt:'\n<span class="dim">1 - Jogar\n2 - Analisar historico\n3 - Ranking\n4 - Sair</span>\n'},
-  {t:16300,txt:'<span class="blue">Opcao: </span>'},
-  {t:17000,txt:'<span class="yellow">4</span>\n'},
-  {t:17400,txt:'<span class="green">Ate mais!</span>\n'},
+const scenes = [
+
+  // --- Cena 0: Jogar partida (Medio) e ganhar moedas (H1, H5) ---
+  // formula moedas: base = 21 - tentativas; multiplicador Medio = 2 → 5 tent → 16*2 = 32
+  [
+    {t:200,  txt:'<span class="green">=== RANDON-WITCH: Jogo de Adivinhacao ===</span>\n\n'},
+    {t:600,  txt:'<span class="dim">1 - Jogar\n2 - Analisar historico\n3 - Ranking\n4 - Loja\n5 - Sair</span>\n'},
+    {t:900,  txt:'<span class="blue">Opcao: </span>'},
+    {t:1500, txt:'<span class="yellow">1</span>\n'},
+    {t:1900, txt:'\n<span class="blue">Seu nome (sem espacos): </span>'},
+    {t:2600, txt:'<span class="yellow">Ana</span>\n'},
+    {t:3000, txt:'\nEscolha a dificuldade:\n  1 - Facil   (1 a  50, sem limite de tentativas)\n  2 - Medio   (1 a 100, sem limite de tentativas)\n  3 - Dificil (1 a 200, limite de 10 tentativas)\n'},
+    {t:3400, txt:'<span class="blue">Dificuldade: </span>'},
+    {t:4000, txt:'<span class="yellow">2</span>\n'},
+    {t:4400, txt:'\n<span class="green">Ok Ana! Adivinhe o numero entre 1 e 100.</span>\n'},
+    {t:4800, txt:'<span class="dim">[Dicas: 0 | digite 0 para usar] </span><span class="blue">Palpite: </span>'},
+    {t:5500, txt:'<span class="yellow">50</span>\n'},
+    {t:5700, txt:'Muito baixo!\n'},
+    {t:6100, txt:'<span class="dim">[Dicas: 0 | digite 0 para usar] </span><span class="blue">Palpite: </span>'},
+    {t:6800, txt:'<span class="yellow">75</span>\n'},
+    {t:7000, txt:'Muito alto!\n'},
+    {t:7400, txt:'<span class="dim">[Dicas: 0 | digite 0 para usar] </span><span class="blue">Palpite: </span>'},
+    {t:8100, txt:'<span class="yellow">62</span>\n'},
+    {t:8300, txt:'Muito alto!\n'},
+    {t:8700, txt:'<span class="dim">[Dicas: 0 | digite 0 para usar] </span><span class="blue">Palpite: </span>'},
+    {t:9400, txt:'<span class="yellow">56</span>\n'},
+    {t:9600, txt:'Muito baixo!\n'},
+    {t:10000,txt:'<span class="dim">[Dicas: 0 | digite 0 para usar] </span><span class="blue">Palpite: </span>'},
+    {t:10700,txt:'<span class="yellow">59</span>\n'},
+    {t:10900,txt:'<span class="green">Acertou! O numero era 59. Voce levou 5 tentativa(s).</span>\n'},
+    {t:11300,txt:'<span class="gold">Voce ganhou 32 moeda(s) de premio! Saldo: 32 moedas.</span>\n'},
+    {t:11700,txt:'<span class="dim">Progresso salvo!</span>\n'},
+    {t:12100,txt:'\n--- Resumo da partida ---\nMuito bem! Estrategia afiada, continue assim.\n'},
+  ],
+
+  // --- Cena 1: Loja de premios (H6) ---
+  // saida real de abrir_loja: "Jogador: X | Saldo: Y moedas", opcoes com %-20s, voltar = NUM_ITENS+1 = 4
+  [
+    {t:200,  txt:'<span class="green">=== RANDON-WITCH: Jogo de Adivinhacao ===</span>\n\n'},
+    {t:500,  txt:'<span class="dim">1 - Jogar\n2 - Analisar historico\n3 - Ranking\n4 - Loja\n5 - Sair</span>\n'},
+    {t:800,  txt:'<span class="blue">Opcao: </span>'},
+    {t:1400, txt:'<span class="yellow">4</span>\n'},
+    {t:1700, txt:'<span class="blue">Seu nome para a loja: </span>'},
+    {t:2300, txt:'<span class="yellow">Ana</span>\n'},
+    {t:2700, txt:'\n<span class="gold">=== LOJA DE PREMIOS ===</span>\n'},
+    {t:2900, txt:'Jogador: Ana | Saldo: <span class="gold">32 moedas</span>\n\n'},
+    {t:3200, txt:'1 - Dica de Intervalo     (30 moedas) — Revela se o alvo esta na metade superior ou inferior do intervalo\n'},
+    {t:3400, txt:'2 - Palpite Bonus          (50 moedas) — Ganha 3 tentativas extras no modo Dificil\n'},
+    {t:3600, txt:'3 - Revelar Dezena         (80 moedas) — Revela o digito das dezenas do numero alvo\n'},
+    {t:3800, txt:'4 - Voltar ao menu\n'},
+    {t:4200, txt:'<span class="blue">Escolha: </span>'},
+    {t:4800, txt:'<span class="yellow">1</span>\n'},
+    {t:5100, txt:"<span class=\"green\">Item 'Dica de Intervalo' resgatado com sucesso! Saldo restante: 2 moedas.</span>\n"},
+    {t:5500, txt:'Use a Dica de Intervalo durante a partida digitando 0 no lugar do palpite.\n'},
+    {t:6200, txt:'\n<span class="dim">1 - Jogar\n2 - Analisar historico\n3 - Ranking\n4 - Loja\n5 - Sair</span>\n'},
+    {t:6500, txt:'<span class="blue">Opcao: </span>'},
+    {t:7100, txt:'<span class="yellow">4</span>\n'},
+    {t:7500, txt:'\n<span class="gold">=== LOJA DE PREMIOS ===</span>\n'},
+    {t:7700, txt:'Jogador: Ana | Saldo: <span class="gold">2 moedas</span>\n\n'},
+    {t:7900, txt:'1 - Dica de Intervalo     (30 moedas) — Revela se o alvo esta na metade superior ou inferior do intervalo\n'},
+    {t:8000, txt:'2 - Palpite Bonus          (50 moedas) — Ganha 3 tentativas extras no modo Dificil\n'},
+    {t:8100, txt:'3 - Revelar Dezena         (80 moedas) — Revela o digito das dezenas do numero alvo\n'},
+    {t:8200, txt:'4 - Voltar ao menu\n'},
+    {t:8500, txt:'<span class="blue">Escolha: </span>'},
+    {t:9100, txt:'<span class="yellow">2</span>\n'},
+    {t:9400, txt:'<span class="red">Saldo insuficiente. Voce tem 2 moedas e o item custa 50.</span>\n'},
+  ],
+
+  // --- Cena 2: Modo Dificil com contador e game over (H4) ---
+  // prompt real: "[X/10] [Dicas: 0 | digite 0 para usar] Palpite: "
+  [
+    {t:200,  txt:'<span class="green">=== RANDON-WITCH: Jogo de Adivinhacao ===</span>\n\n'},
+    {t:500,  txt:'<span class="dim">1 - Jogar\n2 - Analisar historico\n3 - Ranking\n4 - Loja\n5 - Sair</span>\n'},
+    {t:800,  txt:'<span class="blue">Opcao: </span>'},
+    {t:1400, txt:'<span class="yellow">1</span>\n'},
+    {t:1700, txt:'\n<span class="blue">Seu nome (sem espacos): </span>'},
+    {t:2300, txt:'<span class="yellow">Claudemir</span>\n'},
+    {t:2700, txt:'\nEscolha a dificuldade:\n  1 - Facil   (1 a  50, sem limite de tentativas)\n  2 - Medio   (1 a 100, sem limite de tentativas)\n  3 - Dificil (1 a 200, limite de 10 tentativas)\n'},
+    {t:3100, txt:'<span class="blue">Dificuldade: </span>'},
+    {t:3700, txt:'<span class="yellow">3</span>\n'},
+    {t:4100, txt:'\n<span class="green">Ok Claudemir! Adivinhe o numero entre 1 e 200. Voce tem 10 tentativas!</span>\n'},
+    {t:4500, txt:'<span class="dim">[1/10] [Dicas: 0 | digite 0 para usar] </span><span class="blue">Palpite: </span>'},
+    {t:5200, txt:'<span class="yellow">100</span>\n'},
+    {t:5400, txt:'Muito alto!\n'},
+    {t:5700, txt:'<span class="dim">[2/10] [Dicas: 0 | digite 0 para usar] </span><span class="blue">Palpite: </span>'},
+    {t:6400, txt:'<span class="yellow">50</span>\n'},
+    {t:6600, txt:'Muito baixo!\n'},
+    {t:6900, txt:'<span class="dim">[3/10] [Dicas: 0 | digite 0 para usar] </span><span class="blue">Palpite: </span>'},
+    {t:7600, txt:'<span class="yellow">75</span>\n'},
+    {t:7800, txt:'Muito alto!\n'},
+    {t:8100, txt:'<span class="dim">[4/10] [Dicas: 0 | digite 0 para usar] </span><span class="blue">Palpite: </span>'},
+    {t:8800, txt:'<span class="yellow">62</span>\n'},
+    {t:9000, txt:'Muito alto!\n'},
+    {t:9300, txt:'<span class="dim">[5/10] [Dicas: 0 | digite 0 para usar] </span><span class="blue">Palpite: </span>'},
+    {t:10000,txt:'<span class="yellow">56</span>\n'},
+    {t:10200,txt:'Muito alto!\n'},
+    {t:10500,txt:'<span class="dim">[6/10] [Dicas: 0 | digite 0 para usar] </span><span class="blue">Palpite: </span>'},
+    {t:11200,txt:'<span class="yellow">53</span>\n'},
+    {t:11400,txt:'Muito baixo!\n'},
+    {t:11700,txt:'<span class="dim">[7/10] [Dicas: 0 | digite 0 para usar] </span><span class="blue">Palpite: </span>'},
+    {t:12400,txt:'<span class="yellow">54</span>\n'},
+    {t:12600,txt:'Muito baixo!\n'},
+    {t:12900,txt:'<span class="dim">[8/10] [Dicas: 0 | digite 0 para usar] </span><span class="blue">Palpite: </span>'},
+    {t:13600,txt:'<span class="yellow">55</span>\n'},
+    {t:13800,txt:'Muito baixo!\n'},
+    {t:14100,txt:'<span class="dim">[9/10] [Dicas: 0 | digite 0 para usar] </span><span class="blue">Palpite: </span>'},
+    {t:14800,txt:'<span class="yellow">57</span>\n'},
+    {t:15000,txt:'Muito alto!\n'},
+    {t:15300,txt:'<span class="dim">[10/10] [Dicas: 0 | digite 0 para usar] </span><span class="blue">Palpite: </span>'},
+    {t:16000,txt:'<span class="yellow">58</span>\n'},
+    {t:16200,txt:'Muito alto!\n'},
+    {t:16600,txt:'<span class="red">Fim de jogo! O numero era 56. Tente novamente!</span>\n'},
+    {t:17000,txt:'<span class="dim">Progresso salvo!</span>\n'},
+  ],
+
+  // --- Cena 3: Historico + estatisticas + ranking (H2, H7) ---
+  [
+    {t:200,  txt:'<span class="green">=== RANDON-WITCH: Jogo de Adivinhacao ===</span>\n\n'},
+    {t:500,  txt:'<span class="dim">1 - Jogar\n2 - Analisar historico\n3 - Ranking\n4 - Loja\n5 - Sair</span>\n'},
+    {t:800,  txt:'<span class="blue">Opcao: </span>'},
+    {t:1400, txt:'<span class="yellow">2</span>\n'},
+    {t:1800, txt:'\n<span class="green">=== ANALISE DO HISTORICO ===</span>\n\n'},
+    {t:2000, txt:'1 - Ver todas as partidas\n2 - Filtrar por jogador\n'},
+    {t:2300, txt:'<span class="blue">Opcao: </span>'},
+    {t:2900, txt:'<span class="yellow">1</span>\n'},
+    {t:3200, txt:'\n<span class="green">=== RELATORIO POR PARTIDA ===</span>\n'},
+    {t:3400, txt:'(Exibindo as ultimas 10 de 103 partidas)\n'},
+    {t:3700, txt:'\n--- Partida #94 ---\nData: 2026-06-10 03:01:39\nJogador: claudemir\nNumero alvo: 28 | Tentativas: 6\n'},
+    {t:3900, txt:'Avaliacao: bom desempenho.\n'},
+    {t:4200, txt:'\n--- Partida #95 ---\nData: 2026-06-10 03:01:57\nJogador: claudemir\nNumero alvo: 49 | Tentativas: 10\n'},
+    {t:4400, txt:'Avaliacao: desempenho mediano.\n'},
+    {t:4700, txt:'\n... (mais 8 partidas) ...\n'},
+    {t:5200, txt:'\n<span class="green">=== ESTATISTICAS AGREGADAS ===</span>\n'},
+    {t:5400, txt:'Total de sessoes    : <span class="yellow">103</span>\n'},
+    {t:5600, txt:'Media de tentativas : <span class="yellow">6.84</span>\n'},
+    {t:5800, txt:'Melhor sessao       : <span class="green">2 tentativas</span>\n'},
+    {t:6000, txt:'Pior sessao         : <span class="red">14 tentativas</span>\n'},
+    {t:6200, txt:'Desvio padrao       : <span class="yellow">2.31</span>\n'},
+    {t:6400, txt:'Vies baixo / alto   : <span class="yellow">48.3% / 51.7%</span>\n'},
+    {t:6800, txt:'\n--- Sugestoes de Estrategia ---\n'},
+    {t:7000, txt:'<span class="green">Boa estrategia! Voce esta perto de uma busca binaria otimizada.</span>\n'},
+    {t:7400, txt:'<span class="green">Seu vies esta equilibrado, continue assim!</span>\n'},
+    {t:7900, txt:'\n<span class="dim">1 - Jogar\n2 - Analisar historico\n3 - Ranking\n4 - Loja\n5 - Sair</span>\n'},
+    {t:8200, txt:'<span class="blue">Opcao: </span>'},
+    {t:8800, txt:'<span class="yellow">3</span>\n'},
+    {t:9200, txt:'\n<span class="green">--- RANKING (Mestres da Logica) ---</span>\n'},
+    {t:9400, txt:'<span class="dim">Pos  Jogador          Acertos  Tent. Totais  Moedas  Ultimo Acerto</span>\n'},
+    {t:9500, txt:'<span class="dim">--------------------------------------------------------------------------</span>\n'},
+    {t:9700, txt:'1    Ana              28       192           2       2026-06-10\n'},
+    {t:9900, txt:'2    Drielly          22       161           0       2026-06-10\n'},
+    {t:10100,txt:'3    claudemir        18       138           32      2026-06-10\n'},
+  ],
 ];
 
-let timers = [], paused = false, pauseStart = 0, offset = 0, fi = 0;
+let timers = [], paused = false;
 const scr = document.getElementById('screen');
 
-function schedule(fn, delay) {
-  const t = setTimeout(fn, delay);
-  timers.push(t);
-  return t;
-}
+function clearTimers() { timers.forEach(clearTimeout); timers = []; }
 
-function run() {
-  fi = 0; scr.innerHTML = ''; offset = 0;
+function playScene(idx) {
+  clearTimers();
+  paused = false;
+  document.getElementById('pauseBtn').textContent = '⏸ Pausar';
+  document.getElementById('cur').style.display = '';
+  scr.innerHTML = '';
+  const frames = scenes[idx];
   frames.forEach(f => {
-    schedule(() => { scr.innerHTML += f.txt; }, f.t);
+    timers.push(setTimeout(() => { scr.innerHTML += f.txt; }, f.t));
   });
-  schedule(() => { document.getElementById('cur').style.display='none'; }, frames[frames.length-1].t + 800);
+  const last = frames[frames.length - 1].t;
+  timers.push(setTimeout(() => {
+    document.getElementById('cur').style.display = 'none';
+    if (idx < scenes.length - 1) setTimeout(() => playScene(idx + 1), 1500);
+  }, last + 800));
 }
 
-function restart() {
-  timers.forEach(clearTimeout); timers = [];
-  paused = false; offset = 0;
-  document.getElementById('cur').style.display='';
-  run();
-}
+function restart() { playScene(0); }
 
 function togglePause() {
-  // simple pause via offset (full impl omitted for brevity)
   paused = !paused;
-  document.querySelector('button:nth-child(2)').textContent = paused ? '▶ Continuar' : '⏸ Pausar';
+  document.getElementById('pauseBtn').textContent = paused ? '▶ Continuar' : '⏸ Pausar';
 }
 
-run();
+playScene(0);
 </script>
 </body>
 </html>
